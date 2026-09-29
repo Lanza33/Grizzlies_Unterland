@@ -509,6 +509,12 @@ body>.rinkbg{position:absolute;inset:auto;top:230px;left:-16%;width:132%;height:
 .gamecenter.rinkview>.wrap{width:100%;max-width:min(1040px,86vw)}
 .gamecenter.rinkview .sec-head{margin-bottom:1rem}
 
+/* Spielfeld auf mobiler Ansicht senkrecht statt waagerecht */
+@media(max-width:900px){
+  body>.rinkbg{left:0;width:100vw;height:calc(100vh - 230px)}
+  .rinkbg svg{position:absolute;top:50%;left:50%;width:calc(100vh - 230px);height:100vw;transform:translate(-50%,-50%) rotate(90deg)}
+}
+
 /* Sprachwahl */
 .strip__r{display:flex;align-items:center;gap:1.4rem}
 .lang{display:flex;gap:.2rem}
