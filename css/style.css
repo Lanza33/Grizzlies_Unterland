@@ -291,7 +291,7 @@ h1,h2,h3{letter-spacing:.02em}
 .nav__links a::after{height:2px;background:var(--neon);box-shadow:0 0 12px var(--neon)}
 .nav__links a:hover,.nav__links a[aria-current="page"]{color:var(--neon)}
 .nav__toggle{clip-path:var(--cutter);--cut:8px;border-color:var(--neon-dim);color:#fff}
-.nav__langsel{clip-path:var(--cutter);--cut:8px;border-color:rgba(255,255,255,.35);color:#fff;background:rgba(255,255,255,.08);backdrop-filter:blur(4px);font-family:var(--hud)}
+.nav__langsel{clip-path:var(--cutter);--cut:8px;border-color:var(--neon-dim);color:#fff;background:none;font-family:var(--hud)}
 .nav__langsel option{background:var(--forest-night);color:#fff}
 
 /* Hero */
