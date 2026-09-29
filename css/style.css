@@ -291,7 +291,7 @@ h1,h2,h3{letter-spacing:.02em}
 .nav__links a::after{height:2px;background:var(--neon);box-shadow:0 0 12px var(--neon)}
 .nav__links a:hover,.nav__links a[aria-current="page"]{color:var(--neon)}
 .nav__toggle{clip-path:var(--cutter);--cut:8px;border-color:var(--neon-dim);color:#fff}
-.nav__langsel{clip-path:var(--cutter);--cut:8px;border-color:var(--neon-dim);color:#fff;background:none;font-family:var(--hud)}
+.nav__langsel{clip-path:var(--cutter);--cut:8px;border-color:var(--neon-dim);color:#fff;background-color:transparent;font-family:var(--hud);appearance:none;-webkit-appearance:none;-moz-appearance:none;border-radius:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='white'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right .6rem center;background-size:9px 6px;padding-right:1.6rem}
 .nav__langsel option{background:var(--forest-night);color:#fff}
 
 /* Hero */
