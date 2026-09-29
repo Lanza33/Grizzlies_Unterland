@@ -11,7 +11,7 @@
 import { readFile, writeFile, mkdir, access } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { CONFIG, renderRegion, playerPhotoPath, sponsorLogoPath, boardPhotoPath } from '../../js/playervw-render.js';
+import { CONFIG, renderRegion, playerPhotoPath, sponsorLogoPath, boardPhotoPath, slug } from '../../js/playervw-render.js';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(HERE, '..', '..');
@@ -92,6 +92,7 @@ async function syncImages(s) {
   for (const sp of s.sponsors) await syncAsset(sponsorPath(sp), sp.logoUrl);
   for (const p of s.players) if (p.cutoutUrl) await syncAsset(localFor(p.cutoutUrl) ?? playerPhotoPath(p), p.cutoutUrl);
   for (const b of s.board) if (b.photoUrl) await syncAsset(localFor(b.photoUrl) ?? boardPhotoPath(b), b.photoUrl);
+  for (const d of s.documents ?? []) await syncAsset(localFor(d.url) ?? `assets/dokumente/${slug(d.title)}.pdf`, d.url);
 }
 
 // ── Seiten schreiben ────────────────────────────────────────────────────────

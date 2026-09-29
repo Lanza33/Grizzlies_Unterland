@@ -1,6 +1,6 @@
 {
- "version": "05285d9b72dfc5fa",
- "generatedAt": "2026-09-29T17:59:37.284793Z",
+ "version": "cc3601867a95b78d",
+ "generatedAt": "2026-09-29T20:02:55.8927671Z",
  "teamName": "Grizzlies Unterland",
  "season": "2026/2027",
  "seasonStartYear": 2026,
@@ -717,6 +717,16 @@
    "placement": "schedule",
    "visibleFrom": null,
    "visibleUntil": "2026-10-31"
+  }
+ ],
+ "documents": [
+  {
+   "title": "Satzung",
+   "titleIt": "Statuto",
+   "titleEn": "Statutes",
+   "issuedOn": "2025-01-30",
+   "url": "https://grizzlies.lisorect.it/api/public/files/club-docs/ee7a524a8335425aba34d3da3526f5a3.pdf",
+   "sizeBytes": 3791320
   }
  ]
 }

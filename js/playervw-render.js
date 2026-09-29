@@ -36,6 +36,7 @@ export const CONFIG = {
       months: ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'],
       time: '{t} Uhr', home: 'Heim', away: 'Auswärts', noGames: 'Keine Spiele in diesem Monat.',
       positions: { G: 'Tor', D: 'Verteidigung', F: 'Sturm' },
+      documents: 'Dokumente', download: 'PDF herunterladen', version: 'Stand',
       nextGame: 'Nächstes Spiel', noticeLabel: 'Wichtig:', mainSponsor: 'Hauptsponsor', sponsors: 'Sponsoren',
       standingsNote: 'Sp = Spiele &middot; S = Siege &middot; N = Niederlagen &middot; OTN = Niederlage n. Verl. &middot; Pkt = Punkte.',
       statsNote: 'Nur Spieler der Grizzlies Unterland. Sp = Spiele &middot; T = Tore &middot; A = Assists &middot; Pkt = Punkte &middot; GT = Gegentore &middot; SO = Shutout &middot; SM = Strafminuten.',
@@ -51,6 +52,7 @@ export const CONFIG = {
       months: ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'],
       time: 'ore {t}', home: 'Casa', away: 'Trasferta', noGames: 'Nessuna partita in questo mese.',
       positions: { G: 'Portiere', D: 'Difesa', F: 'Attacco' },
+      documents: 'Documenti', download: 'Scarica PDF', version: 'Versione del',
       nextGame: 'Prossima partita', noticeLabel: 'Importante:', mainSponsor: 'Sponsor principale', sponsors: 'Sponsor',
       standingsNote: 'Sp = Partite &middot; V = Vittorie &middot; P = Sconfitte &middot; OTN = Sconfitta d.t.s. &middot; Pt = Punti.',
       statsNote: 'Solo giocatori dei Grizzlies Unterland. Sp = Partite &middot; G = Gol &middot; A = Assist &middot; Pt = Punti &middot; GS = Gol subiti &middot; SO = Shutout &middot; MP = Minuti di penalità.',
@@ -66,6 +68,7 @@ export const CONFIG = {
       months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
       time: '{t}', home: 'Home', away: 'Away', noGames: 'No games this month.',
       positions: { G: 'Goalie', D: 'Defence', F: 'Forward' },
+      documents: 'Documents', download: 'Download PDF', version: 'Version of',
       nextGame: 'Next game', noticeLabel: 'Important:', mainSponsor: 'Main sponsor', sponsors: 'Sponsors',
       standingsNote: 'GP = Games &middot; W = Wins &middot; L = Losses &middot; OTL = OT/SO loss &middot; Pts = Points.',
       statsNote: 'Grizzlies Unterland players only. GP = Games &middot; G = Goals &middot; A = Assists &middot; Pts = Points &middot; GA = Goals against &middot; SO = Shutout &middot; PIM = Penalty minutes.',
@@ -208,6 +211,22 @@ const renderers = {
       const role = (ctx.lang === 'it' ? b.roleIt : ctx.lang === 'en' ? b.roleEn : null) ?? b.role;
       return `      <article class="pcard"><div class="pcard__num" aria-hidden="true">&nbsp;</div>${ph}<div class="pcard__meta"><span class="pcard__pos">${esc(role)}</span><h3>${esc(b.firstName)}<br>${esc(b.lastName)}</h3></div></article>`;
     }).join('\n');
+  },
+
+  /** Vereinsdokumente (z.B. Satzung) auf der Verein-Seite — gleiches Muster wie "Unsere Sponsoren" der Startseite. */
+  documents(s, L, ctx) {
+    const docs = s.documents ?? [];
+    if (docs.length === 0) return '';
+    const rows = docs.map((d) => {
+      const title = (ctx.lang === 'it' ? d.titleIt : ctx.lang === 'en' ? d.titleEn : null) ?? d.title;
+      const src = ctx.image(d.url, `assets/dokumente/${slug(d.title)}.pdf`, 'document');
+      const date = d.issuedOn ? d.issuedOn.split('-').reverse().join('.') : null;
+      const size = `${(d.sizeBytes / 1024 / 1024).toFixed(1).replace('.', ctx.lang === 'en' ? '.' : ',')} MB`;
+      return `  <div class="wrap sec-head"><div><span class="kicker">${L.documents}</span><h2 class="h2">${esc(title)}</h2>`
+        + `<p>${date ? `${L.version} ${date} &middot; ` : ''}PDF, ${size}</p></div>`
+        + `<a class="btn btn--dark" href="${src}" target="_blank" rel="noopener">${L.download}</a></div>`;
+    }).join('\n');
+    return `<section class="section section--light">\n${rows}\n</section>\n`;
   },
 
   /** Laufband auf der Startseite: alle Sponsoren zweimal hintereinander (für nahtloses Durchlaufen). */
