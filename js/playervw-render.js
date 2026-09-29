@@ -20,6 +20,11 @@ export const CONFIG = {
     'Südtiroler Sparkasse': { it: 'Cassa di Risparmio', en: 'Sparkasse Savings Bank' },
     'Kofler Maler & Gipskarton': { it: 'Kofler Pittore & Cartongesso', en: 'Kofler Painting & Drywall' }
   },
+  // Kurznamen im Sponsoren-Laufband der Startseite
+  sponsorShortNames: {
+    'profiklexs Malerei & Trockenbau': 'profiklexs',
+    'Le Clou cosmetic artist': 'Le Clou'
+  },
   // Extra-Attribute für einzelne Logos
   sponsorImageAttributes: {
     Rothoblaas: ' width="400"',
@@ -203,6 +208,16 @@ const renderers = {
       const role = (ctx.lang === 'it' ? b.roleIt : ctx.lang === 'en' ? b.roleEn : null) ?? b.role;
       return `      <article class="pcard"><div class="pcard__num" aria-hidden="true">&nbsp;</div>${ph}<div class="pcard__meta"><span class="pcard__pos">${esc(role)}</span><h3>${esc(b.firstName)}<br>${esc(b.lastName)}</h3></div></article>`;
     }).join('\n');
+  },
+
+  /** Laufband auf der Startseite: alle Sponsoren zweimal hintereinander (für nahtloses Durchlaufen). */
+  'sponsor-band'(s, L, ctx) {
+    const items = s.sponsors.filter((sp) => sp.logoUrl).map((sp) => {
+      const name = CONFIG.sponsorNames[sp.name]?.[ctx.lang] ?? CONFIG.sponsorShortNames[sp.name] ?? sp.name;
+      const src = ctx.image(sp.logoUrl, ctx.sponsorPath?.(sp) ?? sponsorLogoPath(sp), 'sponsor');
+      return `<li class="mq"><img src="${src}" alt="${esc(name)}" loading="lazy"></li>`;
+    }).join('');
+    return items + items;
   },
 
   sponsors(s, L, ctx) {
