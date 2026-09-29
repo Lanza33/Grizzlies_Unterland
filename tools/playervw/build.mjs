@@ -21,6 +21,8 @@ const SNAPSHOT_FILE = join(HERE, 'snapshot.json');
 const MANIFEST_FILE = join(HERE, 'assets.json');
 const config = JSON.parse(await readFile(join(HERE, 'config.json'), 'utf8'));
 const offline = process.argv.includes('--offline');
+// Zum Testen: PLAYERVW_API=http://localhost:…/snapshot.json
+const apiUrl = process.env.PLAYERVW_API || config.apiUrl;
 
 // Im Spielplan stehen die Monatskürzel in allen Sprachen deutsch (wie bisher).
 const SHORT_MONTHS = ['Jan', 'Feb', 'Mär', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dez'];
@@ -37,7 +39,7 @@ async function loadSnapshot() {
     return { snapshot: previous, fresh: false };
   }
   try {
-    const res = await fetch(config.apiUrl, { signal: AbortSignal.timeout(config.timeoutMs), headers: { 'User-Agent': 'Grizzlies-Webseite-Build' } });
+    const res = await fetch(apiUrl, { signal: AbortSignal.timeout(config.timeoutMs), headers: { 'User-Agent': 'Grizzlies-Webseite-Build' } });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const snapshot = await res.json();
     const problem = plausibility(snapshot, previous);
@@ -262,7 +264,7 @@ function renderBoard(s, prefix) {
       ? `<div class="pcard__ph"><img src="${prefix}assets/${photo}" alt="${esc(b.firstName + ' ' + b.lastName)}"></div>`
       : '<div class="pcard__ph pcard__ph--empty"></div>';
     return `      <article class="pcard"><div class="pcard__num" aria-hidden="true">&nbsp;</div>${ph}<div class="pcard__meta"><span class="pcard__pos">${esc(roleOf(b))}</span><h3>${esc(b.firstName)}<br>${esc(b.lastName)}</h3></div></article>`;
-  }).join('\n').replace(/^ {6}/, '');
+  }).join('\n');
 }
 let currentLang = 'de';
 const roleOf = (b) => (currentLang === 'it' ? b.roleIt : currentLang === 'en' ? b.roleEn : null) ?? b.role;
@@ -276,11 +278,15 @@ function sponsorLogo(sp, known) {
   return known.get(sp.name) ?? (sp.logoUrl ? `${config.sponsorLogoDir}/${slug(sp.name)}${extOf(sp.logoUrl, '.png')}` : null);
 }
 
-function renderSponsors(s, L, prefix, current) {
-  const known = existingSponsorLogos(current);
+/** Logo-Pfade immer aus der deutschen Seite (in IT/EN sind manche Sponsornamen übersetzt). */
+let sponsorLogosDe = new Map();
+const sponsorName = (sp, lang) => config.sponsorNames?.[sp.name]?.[lang] ?? sp.name;
+
+function renderSponsors(s, L, lang, prefix) {
   const img = (sp) => {
-    const path = sponsorLogo(sp, known);
-    return path ? `<img src="${prefix}${path}" alt="${esc(sp.name)}"${config.sponsorImageAttributes[sp.name] ?? ''}>` : esc(sp.name);
+    const path = sponsorLogo(sp, sponsorLogosDe);
+    const name = esc(sponsorName(sp, lang));
+    return path ? `<img src="${prefix}${path}" alt="${name}"${config.sponsorImageAttributes[sp.name] ?? ''}>` : name;
   };
   const tile = (sp, main) => {
     const cls = main ? 'spon spon--main spon--logo' : 'spon spon--logo-light';
@@ -315,7 +321,7 @@ function fill(html, s, lang, L, prefix) {
       'stats': () => renderStats(s, L),
       'stats-note': () => note(s, L.statsNote, L),
       'board': () => renderBoard(s, prefix),
-      'sponsors': () => renderSponsors(s, L, prefix, current)
+      'sponsors': () => renderSponsors(s, L, lang, prefix)
     }[name];
     if (!render) { warn(`Unbekannter Bereich "${name}" – bleibt unverändert.`); return all; }
     return open + render() + close;
@@ -323,9 +329,7 @@ function fill(html, s, lang, L, prefix) {
 }
 
 async function syncImages(s) {
-  const sponsorHtml = await readFile(join(ROOT, 'sponsoren.html'), 'utf8');
-  const known = existingSponsorLogos(sponsorHtml);
-  for (const sp of s.sponsors) await syncAsset(sponsorLogo(sp, known), sp.logoUrl);
+  for (const sp of s.sponsors) await syncAsset(sponsorLogo(sp, sponsorLogosDe), sp.logoUrl);
   for (const p of s.players) {
     if (p.cutoutUrl) await syncAsset(`${config.playerPhotoDir}/${slug(fullName(p))}${extOf(p.cutoutUrl, '.png')}`, p.cutoutUrl);
   }
@@ -340,6 +344,7 @@ const { snapshot, fresh, changed } = await loadSnapshot();
 manifest = await readFile(MANIFEST_FILE, 'utf8').then(JSON.parse).catch(() => ({}));
 log(`Datenstand ${snapshot.version}${fresh ? ' (frisch aus PlayerVW)' : ' (gespeichert)'}`);
 
+sponsorLogosDe = existingSponsorLogos(await readFile(join(ROOT, 'sponsoren.html'), 'utf8').catch(() => ''));
 if (fresh) await syncImages(snapshot);
 
 let written = 0;

@@ -1,0 +1,52 @@
+# Holt Mannschaft, Spielplan, Ergebnisse, Tabelle, Statistiken, Vorstand, Sponsoren und Hinweise aus PlayerVW
+# und schreibt sie in die Seiten (nur innerhalb der pvw-Markierungen). Ändert sich etwas, wird committet —
+# GitHub Pages veröffentlicht danach wie gewohnt.
+
+name: Daten aus PlayerVW
+
+on:
+  # PlayerVW meldet sich, sobald dort etwas Öffentliches geändert wurde
+  repository_dispatch:
+    types: [playervw-update]
+  # Täglich: "Nächstes Spiel" rückt weiter, Sicherheitsnetz falls ein Aufruf verloren geht
+  schedule:
+    - cron: "0 2 * * *"
+  # Von Hand: Actions → "Daten aus PlayerVW" → Run workflow
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: playervw
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Seiten aus PlayerVW befüllen
+        run: node tools/playervw/build.mjs
+
+      - name: Änderungen veröffentlichen
+        run: |
+          if git diff --quiet; then
+            echo "Keine Änderungen."
+            exit 0
+          fi
+          git config user.name "PlayerVW"
+          git config user.email "playervw@users.noreply.github.com"
+          git add -A
+          git commit -m "Daten aus PlayerVW"
+          git push
+          # Pages-Build anstoßen (Pushes mit dem Actions-Token lösen ihn nicht immer selbst aus)
+          curl -fsS -X POST -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/${{ github.repository }}/pages/builds" || echo "Pages-Build wird von GitHub selbst gestartet."

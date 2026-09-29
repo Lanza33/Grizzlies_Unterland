@@ -1,0 +1,722 @@
+{
+ "version": "05285d9b72dfc5fa",
+ "generatedAt": "2026-09-29T17:59:37.284793Z",
+ "teamName": "Grizzlies Unterland",
+ "season": "2026/2027",
+ "seasonStartYear": 2026,
+ "logoUrl": "https://grizzlies.lisorect.it/img/teams/grizzlies.png",
+ "players": [
+  {
+   "firstName": "Felix",
+   "lastName": "Puff",
+   "position": "G",
+   "jerseyNumber": 35,
+   "isNew": true,
+   "photoUrl": "https://grizzlies.lisorect.it/api/public/files/players/c7d8e1e4e05c41eea4a18d60059beff4.jpg",
+   "cutoutUrl": "https://grizzlies.lisorect.it/api/public/files/players/ec71dd5436f147a58c80cd7d2b40c99a.png"
+  },
+  {
+   "firstName": "Marcel",
+   "lastName": "Rizzi",
+   "position": "G",
+   "jerseyNumber": 46,
+   "isNew": true,
+   "photoUrl": "https://grizzlies.lisorect.it/api/public/files/players/d2bea658bc2e4ef58b79281dd07f73ae.jpg",
+   "cutoutUrl": "https://grizzlies.lisorect.it/api/public/files/players/481cea36e8954518b5333cf89ddff690.png"
+  },
+  {
+   "firstName": "Martina",
+   "lastName": "Marangoni",
+   "position": "G",
+   "jerseyNumber": null,
+   "isNew": true,
+   "photoUrl": null,
+   "cutoutUrl": null
+  },
+  {
+   "firstName": "Bastian",
+   "lastName": "Lechner",
+   "position": "D",
+   "jerseyNumber": 18,
+   "isNew": false,
+   "photoUrl": null,
+   "cutoutUrl": null
+  },
+  {
+   "firstName": "Patrick",
+   "lastName": "Sanin",
+   "position": "D",
+   "jerseyNumber": 19,
+   "isNew": false,
+   "photoUrl": null,
+   "cutoutUrl": null
+  },
+  {
+   "firstName": "Simon",
+   "lastName": "Stuppner",
+   "position": "D",
+   "jerseyNumber": 20,
+   "isNew": false,
+   "photoUrl": null,
+   "cutoutUrl": null
+  },
+  {
+   "firstName": "Lukas",
+   "lastName": "Pistore",
+   "position": "D",
+   "jerseyNumber": 28,
+   "isNew": false,
+   "photoUrl": null,
+   "cutoutUrl": null
+  },
+  {
+   "firstName": "Gregor",
+   "lastName": "Lanziner",
+   "position": "D",
+   "jerseyNumber": 33,
+   "isNew": false,
+   "photoUrl": null,
+   "cutoutUrl": null
+  },
+  {
+   "firstName": "Jakob",
+   "lastName": "Holzknecht",
+   "position": "D",
+   "jerseyNumber": 77,
+   "isNew": true,
+   "photoUrl": null,
+   "cutoutUrl": null
+  },
+  {
+   "firstName": "Matteo",
+   "lastName": "Chiste",
+   "position": "F",
+   "jerseyNumber": 7,
+   "isNew": false,
+   "photoUrl": null,
+   "cutoutUrl": null
+  },
+  {
+   "firstName": "Matthias",
+   "lastName": "Fill",
+   "position": "F",
+   "jerseyNumber": 8,
+   "isNew": false,
+   "photoUrl": null,
+   "cutoutUrl": null
+  },
+  {
+   "firstName": "Elias",
+   "lastName": "Cazzanelli",
+   "position": "F",
+   "jerseyNumber": 12,
+   "isNew": false,
+   "photoUrl": null,
+   "cutoutUrl": null
+  },
+  {
+   "firstName": "Marc",
+   "lastName": "Roncador",
+   "position": "F",
+   "jerseyNumber": 13,
+   "isNew": false,
+   "photoUrl": null,
+   "cutoutUrl": null
+  },
+  {
+   "firstName": "Felix",
+   "lastName": "Grandi",
+   "position": "F",
+   "jerseyNumber": 17,
+   "isNew": false,
+   "photoUrl": null,
+   "cutoutUrl": null
+  },
+  {
+   "firstName": "Alex",
+   "lastName": "Tiziani",
+   "position": "F",
+   "jerseyNumber": 21,
+   "isNew": false,
+   "photoUrl": null,
+   "cutoutUrl": null
+  },
+  {
+   "firstName": "Lorenz",
+   "lastName": "Fäckl",
+   "position": "F",
+   "jerseyNumber": 23,
+   "isNew": false,
+   "photoUrl": null,
+   "cutoutUrl": null
+  },
+  {
+   "firstName": "Matthias",
+   "lastName": "Locher",
+   "position": "F",
+   "jerseyNumber": 29,
+   "isNew": true,
+   "photoUrl": "https://grizzlies.lisorect.it/api/public/files/players/0dc6b2e89e214a7f856eb4d8a1619e56.jpg",
+   "cutoutUrl": "https://grizzlies.lisorect.it/api/public/files/players/8091da16b6e24262b16dce6ad3543431.png"
+  },
+  {
+   "firstName": "Daryl",
+   "lastName": "Hechenblaickner",
+   "position": "F",
+   "jerseyNumber": 42,
+   "isNew": true,
+   "photoUrl": null,
+   "cutoutUrl": null
+  },
+  {
+   "firstName": "Patrick",
+   "lastName": "Ceolan",
+   "position": "F",
+   "jerseyNumber": 86,
+   "isNew": false,
+   "photoUrl": null,
+   "cutoutUrl": null
+  },
+  {
+   "firstName": "Max",
+   "lastName": "Depaoli",
+   "position": "F",
+   "jerseyNumber": 97,
+   "isNew": false,
+   "photoUrl": null,
+   "cutoutUrl": null
+  }
+ ],
+ "games": [
+  {
+   "startsAt": "2026-10-11T21:00:00",
+   "venue": "Ritten",
+   "isHome": false,
+   "home": {
+    "name": "HC Skulls",
+    "logoUrl": "https://grizzlies.lisorect.it/img/teams/skulls.png"
+   },
+   "away": {
+    "name": "Grizzlies Unterland",
+    "logoUrl": "https://grizzlies.lisorect.it/img/teams/grizzlies.png"
+   },
+   "notes": null,
+   "result": null
+  },
+  {
+   "startsAt": "2026-10-25T16:30:00",
+   "venue": "Ritten",
+   "isHome": false,
+   "home": {
+    "name": "HC Tuifl",
+    "logoUrl": "https://grizzlies.lisorect.it/img/teams/tuifl.png"
+   },
+   "away": {
+    "name": "Grizzlies Unterland",
+    "logoUrl": "https://grizzlies.lisorect.it/img/teams/grizzlies.png"
+   },
+   "notes": null,
+   "result": null
+  },
+  {
+   "startsAt": "2026-11-01T21:00:00",
+   "venue": "Ritten",
+   "isHome": false,
+   "home": {
+    "name": "HC Zone",
+    "logoUrl": "https://grizzlies.lisorect.it/img/teams/zone.png"
+   },
+   "away": {
+    "name": "Grizzlies Unterland",
+    "logoUrl": "https://grizzlies.lisorect.it/img/teams/grizzlies.png"
+   },
+   "notes": null,
+   "result": null
+  },
+  {
+   "startsAt": "2026-11-07T21:00:00",
+   "venue": "Ritten",
+   "isHome": false,
+   "home": {
+    "name": "ZSKA Signat",
+    "logoUrl": "https://grizzlies.lisorect.it/img/teams/zska.png"
+   },
+   "away": {
+    "name": "Grizzlies Unterland",
+    "logoUrl": "https://grizzlies.lisorect.it/img/teams/grizzlies.png"
+   },
+   "notes": null,
+   "result": null
+  },
+  {
+   "startsAt": "2026-11-14T18:30:00",
+   "venue": "Auer",
+   "isHome": true,
+   "home": {
+    "name": "Grizzlies Unterland",
+    "logoUrl": "https://grizzlies.lisorect.it/img/teams/grizzlies.png"
+   },
+   "away": {
+    "name": "Softy Socks",
+    "logoUrl": "https://grizzlies.lisorect.it/img/teams/softy.png"
+   },
+   "notes": null,
+   "result": null
+  },
+  {
+   "startsAt": "2026-11-22T18:30:00",
+   "venue": "Auer",
+   "isHome": true,
+   "home": {
+    "name": "Grizzlies Unterland",
+    "logoUrl": "https://grizzlies.lisorect.it/img/teams/grizzlies.png"
+   },
+   "away": {
+    "name": "HC Floschn",
+    "logoUrl": "https://grizzlies.lisorect.it/img/teams/floschn.png"
+   },
+   "notes": null,
+   "result": null
+  },
+  {
+   "startsAt": "2026-11-29T16:30:00",
+   "venue": "Ritten",
+   "isHome": false,
+   "home": {
+    "name": "El Dorado",
+    "logoUrl": "https://grizzlies.lisorect.it/img/teams/eldorado.png"
+   },
+   "away": {
+    "name": "Grizzlies Unterland",
+    "logoUrl": "https://grizzlies.lisorect.it/img/teams/grizzlies.png"
+   },
+   "notes": null,
+   "result": null
+  },
+  {
+   "startsAt": "2026-12-06T18:45:00",
+   "venue": "Ritten",
+   "isHome": false,
+   "home": {
+    "name": "Softy Socks",
+    "logoUrl": "https://grizzlies.lisorect.it/img/teams/softy.png"
+   },
+   "away": {
+    "name": "Grizzlies Unterland",
+    "logoUrl": "https://grizzlies.lisorect.it/img/teams/grizzlies.png"
+   },
+   "notes": null,
+   "result": null
+  },
+  {
+   "startsAt": "2026-12-13T18:30:00",
+   "venue": "Auer",
+   "isHome": true,
+   "home": {
+    "name": "Grizzlies Unterland",
+    "logoUrl": "https://grizzlies.lisorect.it/img/teams/grizzlies.png"
+   },
+   "away": {
+    "name": "HC Skulls",
+    "logoUrl": "https://grizzlies.lisorect.it/img/teams/skulls.png"
+   },
+   "notes": null,
+   "result": null
+  },
+  {
+   "startsAt": "2026-12-20T18:30:00",
+   "venue": "Auer",
+   "isHome": true,
+   "home": {
+    "name": "Grizzlies Unterland",
+    "logoUrl": "https://grizzlies.lisorect.it/img/teams/grizzlies.png"
+   },
+   "away": {
+    "name": "HC Grisu",
+    "logoUrl": "https://grizzlies.lisorect.it/img/teams/grisu.png"
+   },
+   "notes": null,
+   "result": null
+  },
+  {
+   "startsAt": "2026-12-26T18:45:00",
+   "venue": "Ritten",
+   "isHome": false,
+   "home": {
+    "name": "HC Grisu",
+    "logoUrl": "https://grizzlies.lisorect.it/img/teams/grisu.png"
+   },
+   "away": {
+    "name": "Grizzlies Unterland",
+    "logoUrl": "https://grizzlies.lisorect.it/img/teams/grizzlies.png"
+   },
+   "notes": null,
+   "result": null
+  },
+  {
+   "startsAt": "2027-01-03T18:30:00",
+   "venue": "Auer",
+   "isHome": true,
+   "home": {
+    "name": "Grizzlies Unterland",
+    "logoUrl": "https://grizzlies.lisorect.it/img/teams/grizzlies.png"
+   },
+   "away": {
+    "name": "HC Zone",
+    "logoUrl": "https://grizzlies.lisorect.it/img/teams/zone.png"
+   },
+   "notes": null,
+   "result": null
+  },
+  {
+   "startsAt": "2027-01-10T18:30:00",
+   "venue": "Auer",
+   "isHome": true,
+   "home": {
+    "name": "Grizzlies Unterland",
+    "logoUrl": "https://grizzlies.lisorect.it/img/teams/grizzlies.png"
+   },
+   "away": {
+    "name": "HC Tuifl",
+    "logoUrl": "https://grizzlies.lisorect.it/img/teams/tuifl.png"
+   },
+   "notes": null,
+   "result": null
+  },
+  {
+   "startsAt": "2027-01-16T18:30:00",
+   "venue": "Auer",
+   "isHome": true,
+   "home": {
+    "name": "Grizzlies Unterland",
+    "logoUrl": "https://grizzlies.lisorect.it/img/teams/grizzlies.png"
+   },
+   "away": {
+    "name": "ZSKA Signat",
+    "logoUrl": "https://grizzlies.lisorect.it/img/teams/zska.png"
+   },
+   "notes": null,
+   "result": null
+  },
+  {
+   "startsAt": "2027-01-24T17:45:00",
+   "venue": "Sarntal",
+   "isHome": false,
+   "home": {
+    "name": "HC Floschn",
+    "logoUrl": "https://grizzlies.lisorect.it/img/teams/floschn.png"
+   },
+   "away": {
+    "name": "Grizzlies Unterland",
+    "logoUrl": "https://grizzlies.lisorect.it/img/teams/grizzlies.png"
+   },
+   "notes": null,
+   "result": null
+  },
+  {
+   "startsAt": "2027-01-30T18:30:00",
+   "venue": "Auer",
+   "isHome": true,
+   "home": {
+    "name": "Grizzlies Unterland",
+    "logoUrl": "https://grizzlies.lisorect.it/img/teams/grizzlies.png"
+   },
+   "away": {
+    "name": "El Dorado",
+    "logoUrl": "https://grizzlies.lisorect.it/img/teams/eldorado.png"
+   },
+   "notes": null,
+   "result": null
+  }
+ ],
+ "scorers": [],
+ "goalies": [],
+ "standings": {
+  "season": "2026/2027",
+  "pointsPerWin": 2,
+  "pointsPerOvertimeLoss": 1,
+  "rows": [
+   {
+    "rank": 1,
+    "team": "Grizzlies Unterland",
+    "logoUrl": "https://grizzlies.lisorect.it/img/teams/grizzlies.png",
+    "isOwn": true,
+    "gamesPlayed": 0,
+    "wins": 0,
+    "losses": 0,
+    "overtimeLosses": 0,
+    "goalsFor": 0,
+    "goalsAgainst": 0,
+    "goalDiff": 0,
+    "points": 0
+   },
+   {
+    "rank": 2,
+    "team": "HC Skulls",
+    "logoUrl": "https://grizzlies.lisorect.it/img/teams/skulls.png",
+    "isOwn": false,
+    "gamesPlayed": 0,
+    "wins": 0,
+    "losses": 0,
+    "overtimeLosses": 0,
+    "goalsFor": 0,
+    "goalsAgainst": 0,
+    "goalDiff": 0,
+    "points": 0
+   },
+   {
+    "rank": 3,
+    "team": "HC Tuifl",
+    "logoUrl": "https://grizzlies.lisorect.it/img/teams/tuifl.png",
+    "isOwn": false,
+    "gamesPlayed": 0,
+    "wins": 0,
+    "losses": 0,
+    "overtimeLosses": 0,
+    "goalsFor": 0,
+    "goalsAgainst": 0,
+    "goalDiff": 0,
+    "points": 0
+   },
+   {
+    "rank": 4,
+    "team": "HC Zone",
+    "logoUrl": "https://grizzlies.lisorect.it/img/teams/zone.png",
+    "isOwn": false,
+    "gamesPlayed": 0,
+    "wins": 0,
+    "losses": 0,
+    "overtimeLosses": 0,
+    "goalsFor": 0,
+    "goalsAgainst": 0,
+    "goalDiff": 0,
+    "points": 0
+   },
+   {
+    "rank": 5,
+    "team": "ZSKA Signat",
+    "logoUrl": "https://grizzlies.lisorect.it/img/teams/zska.png",
+    "isOwn": false,
+    "gamesPlayed": 0,
+    "wins": 0,
+    "losses": 0,
+    "overtimeLosses": 0,
+    "goalsFor": 0,
+    "goalsAgainst": 0,
+    "goalDiff": 0,
+    "points": 0
+   },
+   {
+    "rank": 6,
+    "team": "Softy Socks",
+    "logoUrl": "https://grizzlies.lisorect.it/img/teams/softy.png",
+    "isOwn": false,
+    "gamesPlayed": 0,
+    "wins": 0,
+    "losses": 0,
+    "overtimeLosses": 0,
+    "goalsFor": 0,
+    "goalsAgainst": 0,
+    "goalDiff": 0,
+    "points": 0
+   },
+   {
+    "rank": 7,
+    "team": "HC Floschn",
+    "logoUrl": "https://grizzlies.lisorect.it/img/teams/floschn.png",
+    "isOwn": false,
+    "gamesPlayed": 0,
+    "wins": 0,
+    "losses": 0,
+    "overtimeLosses": 0,
+    "goalsFor": 0,
+    "goalsAgainst": 0,
+    "goalDiff": 0,
+    "points": 0
+   },
+   {
+    "rank": 8,
+    "team": "El Dorado",
+    "logoUrl": "https://grizzlies.lisorect.it/img/teams/eldorado.png",
+    "isOwn": false,
+    "gamesPlayed": 0,
+    "wins": 0,
+    "losses": 0,
+    "overtimeLosses": 0,
+    "goalsFor": 0,
+    "goalsAgainst": 0,
+    "goalDiff": 0,
+    "points": 0
+   },
+   {
+    "rank": 9,
+    "team": "HC Grisu",
+    "logoUrl": "https://grizzlies.lisorect.it/img/teams/grisu.png",
+    "isOwn": false,
+    "gamesPlayed": 0,
+    "wins": 0,
+    "losses": 0,
+    "overtimeLosses": 0,
+    "goalsFor": 0,
+    "goalsAgainst": 0,
+    "goalDiff": 0,
+    "points": 0
+   }
+  ]
+ },
+ "staff": [],
+ "board": [
+  {
+   "role": "Präsident",
+   "roleIt": "Presidente",
+   "roleEn": "President",
+   "firstName": "Marc",
+   "lastName": "Roncador",
+   "photoUrl": null
+  },
+  {
+   "role": "Vizepräsident / Kassier",
+   "roleIt": "Vicepresidente / Cassiere",
+   "roleEn": "Vice president / Treasurer",
+   "firstName": "Elias",
+   "lastName": "Cazzanelli",
+   "photoUrl": null
+  },
+  {
+   "role": "Vorstand / Schriftführer",
+   "roleIt": "Direttivo / Segretario",
+   "roleEn": "Board / Secretary",
+   "firstName": "Gregor",
+   "lastName": "Lanziner",
+   "photoUrl": null
+  },
+  {
+   "role": "Vorstand",
+   "roleIt": "Direttivo",
+   "roleEn": "Board",
+   "firstName": "Thomas",
+   "lastName": "Fäckl",
+   "photoUrl": null
+  },
+  {
+   "role": "Vorstand",
+   "roleIt": "Direttivo",
+   "roleEn": "Board",
+   "firstName": "Lorenz",
+   "lastName": "Fäckl",
+   "photoUrl": null
+  },
+  {
+   "role": "Vorstand",
+   "roleIt": "Direttivo",
+   "roleEn": "Board",
+   "firstName": "Patrick",
+   "lastName": "Sanin",
+   "photoUrl": null
+  },
+  {
+   "role": "Vorstand",
+   "roleIt": "Direttivo",
+   "roleEn": "Board",
+   "firstName": "Lukas",
+   "lastName": "Pistore",
+   "photoUrl": null
+  }
+ ],
+ "sponsors": [
+  {
+   "name": "Rothoblaas",
+   "tier": "Main",
+   "websiteUrl": "https://www.rothoblaas.com",
+   "logoUrl": "https://grizzlies.lisorect.it/api/public/files/sponsors/e594e8959b9740de9d265b729ef7f560.svg"
+  },
+  {
+   "name": "Südtiroler Sparkasse",
+   "tier": "Sponsor",
+   "websiteUrl": null,
+   "logoUrl": "https://grizzlies.lisorect.it/api/public/files/sponsors/561c0b89367c4116afa82c2669dc8f9c.jpg"
+  },
+  {
+   "name": "Köhl GmbH",
+   "tier": "Sponsor",
+   "websiteUrl": null,
+   "logoUrl": "https://grizzlies.lisorect.it/api/public/files/sponsors/781389cf89f543d8a4dff0bcf1d95e16.png"
+  },
+  {
+   "name": "Tschigg Beton",
+   "tier": "Sponsor",
+   "websiteUrl": null,
+   "logoUrl": "https://grizzlies.lisorect.it/api/public/files/sponsors/9bab397539ff4ce286337c8f14d27f68.png"
+  },
+  {
+   "name": "profiklexs Malerei & Trockenbau",
+   "tier": "Sponsor",
+   "websiteUrl": null,
+   "logoUrl": "https://grizzlies.lisorect.it/api/public/files/sponsors/2795450c4d7c467c98e4f4f2e133310b.png"
+  },
+  {
+   "name": "SportForYou",
+   "tier": "Sponsor",
+   "websiteUrl": null,
+   "logoUrl": "https://grizzlies.lisorect.it/api/public/files/sponsors/099b7f5220a1419c8871f469ce534d5a.png"
+  },
+  {
+   "name": "Widmann Heizungen",
+   "tier": "Sponsor",
+   "websiteUrl": null,
+   "logoUrl": "https://grizzlies.lisorect.it/api/public/files/sponsors/335fbfaac7d643519c862e46badddf92.png"
+  },
+  {
+   "name": "Le Clou cosmetic artist",
+   "tier": "Sponsor",
+   "websiteUrl": null,
+   "logoUrl": "https://grizzlies.lisorect.it/api/public/files/sponsors/69ca7ddf49ad406c944a794d9f421dfb.png"
+  },
+  {
+   "name": "Metallbau Sanin",
+   "tier": "Sponsor",
+   "websiteUrl": null,
+   "logoUrl": "https://grizzlies.lisorect.it/api/public/files/sponsors/9724bb950b2e4728b574765e9b682ceb.png"
+  },
+  {
+   "name": "Barrel Hockey",
+   "tier": "Sponsor",
+   "websiteUrl": null,
+   "logoUrl": "https://grizzlies.lisorect.it/api/public/files/sponsors/65c412e6449d41a6baa9d9f63fb7cf41.png"
+  },
+  {
+   "name": "Shark Painting",
+   "tier": "Sponsor",
+   "websiteUrl": null,
+   "logoUrl": "https://grizzlies.lisorect.it/api/public/files/sponsors/9c780746299e489d81860cb67ee0c5db.png"
+  },
+  {
+   "name": "Fäckl GmbH/S.r.l.",
+   "tier": "Sponsor",
+   "websiteUrl": null,
+   "logoUrl": "https://grizzlies.lisorect.it/api/public/files/sponsors/0d9c9ae0675d47b78b19a2b7e226bdfc.png"
+  },
+  {
+   "name": "Kofler Maler & Gipskarton",
+   "tier": "Sponsor",
+   "websiteUrl": null,
+   "logoUrl": "https://grizzlies.lisorect.it/api/public/files/sponsors/826981acfcde40d2a1bbb3ec0f635c09.png"
+  },
+  {
+   "name": "Greg's Hockey Shop",
+   "tier": "Sponsor",
+   "websiteUrl": null,
+   "logoUrl": "https://grizzlies.lisorect.it/api/public/files/sponsors/16248aa5a93b4cbc96ff504252d91a50.png"
+  }
+ ],
+ "notices": [
+  {
+   "text": "In Auer ist bis Ende Oktober noch kein Eis. Die ersten Spiele der Saison finden deshalb nicht in Auer statt – die genauen Spielorte stehen bei jedem Termin.",
+   "textIt": "a Ora fino a fine ottobre non c'è ancora il ghiaccio. Le prime partite della stagione non si giocano quindi a Ora – i luoghi esatti sono indicati per ogni data.",
+   "textEn": "there is no ice in Auer until the end of October. The first games of the season will therefore not take place in Auer – the exact venues are listed with each fixture.",
+   "placement": "schedule",
+   "visibleFrom": null,
+   "visibleUntil": "2026-10-31"
+  }
+ ]
+}
