@@ -24,8 +24,14 @@ Die GitHub Action „Daten aus PlayerVW“ (`.github/workflows/playervw.yml`) l�
 Der letzte Stand liegt in `snapshot.json`. Fällt PlayerVW aus oder liefert verdächtig wenig (z.B. plötzlich keine Spieler),
 bleibt die Seite unverändert – sie wird nie leer.
 
-## Einstellungen (`config.json`)
+## Live im Browser
 
+`js/playervw.js` holt die Daten zusätzlich direkt beim Öffnen der Seite, alle 5 Minuten und beim Zurückkehren zum Tab.
+Ein eingetragenes Ergebnis ist damit sofort sichtbar. Antwortet PlayerVW nicht, bleibt der eingebaute Stand.
+
+## Einstellungen (`js/playervw-render.js`, oben `CONFIG`)
+
+Build und Browser nutzen dieselbe Darstellung. Dort stehen:
 - `venues`: Ortsnamen auf Italienisch/Englisch (z.B. Ritten → Renon)
 - `sponsorNames`: übersetzte Sponsornamen
 - `sponsorImageAttributes`: Extra-Attribute für einzelne Logos (z.B. Breite)
