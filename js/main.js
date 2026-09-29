@@ -8,6 +8,27 @@
   });
 })();
 
+// Sprachauswahl mobil: Dropdown neben dem Menü-Button, aus den Links der Topbar gebaut
+(function(){
+  var navIn = document.querySelector('.nav__in'), toggle = document.querySelector('.nav__toggle');
+  var langWrap = document.querySelector('.strip .lang'), links = langWrap ? langWrap.querySelectorAll('a') : [];
+  if(!navIn || !toggle || !links.length) return;
+  var sel = document.createElement('select');
+  sel.className = 'nav__langsel';
+  sel.setAttribute('aria-label', langWrap.getAttribute('aria-label') || 'Sprache');
+  links.forEach(function(a){
+    var opt = document.createElement('option');
+    opt.value = a.getAttribute('href');
+    opt.textContent = a.textContent;
+    if(a.hasAttribute('aria-current')) opt.selected = true;
+    sel.appendChild(opt);
+  });
+  sel.addEventListener('change', function(){
+    if(sel.value) window.location.href = sel.value;
+  });
+  navIn.insertBefore(sel, toggle);
+})();
+
 // Positionsfilter (Mannschaft)
 (function(){
   var chips = document.querySelectorAll('.chip[data-filter]');
