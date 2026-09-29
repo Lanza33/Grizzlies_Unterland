@@ -47,8 +47,8 @@ p{margin:0 0 1rem}
 .nav__links a[aria-current="page"]{color:var(--wheat-soft)}
 .nav__toggle{display:none;margin-left:auto;background:none;border:2px solid var(--line);color:#fff;padding:.5rem .9rem;font-family:'Oswald';letter-spacing:.1em;text-transform:uppercase;font-size:.85rem;cursor:pointer}
 @media(max-width:900px){
-  .nav__in{justify-content:space-between;padding-block:.5rem}
-  .nav__toggle{display:block}
+  .nav__in{justify-content:space-between;padding-block:1.1rem}
+  .nav__toggle{display:block;padding:.7rem 1.1rem;font-size:.95rem}
   .nav__links{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;background:var(--forest-night);border-bottom:3px solid var(--iron);padding:.4rem var(--gutter) 1rem}
   .nav__links.open{display:flex}
   .nav__links a{padding:.9rem 0;border-bottom:1px solid var(--line)}
@@ -469,7 +469,7 @@ body>.rinkbg{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5}
   .nav__logo{display:none}
   .nav__group{display:contents}
   .nav__brandm{display:block}
-  .nav__brandm img{height:52px;width:auto}
+  .nav__brandm img{height:88px;width:auto}
 }
 
 /* Kein Teamfoto, kein grosses Logo, kein Glow */
