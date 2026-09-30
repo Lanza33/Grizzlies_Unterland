@@ -1,6 +1,6 @@
 {
- "version": "6c4032149a7b1fcd",
- "generatedAt": "2026-09-30T08:58:55.2783355Z",
+ "version": "d6d296e48191cd5a",
+ "generatedAt": "2026-09-30T10:56:41.1907678Z",
  "teamName": "Grizzlies Unterland",
  "season": "2026/2027",
  "seasonStartYear": 2026,
@@ -642,13 +642,13 @@
   {
    "name": "Südtiroler Sparkasse",
    "tier": "Sponsor",
-   "websiteUrl": null,
+   "websiteUrl": "https://www.sparkasse.it",
    "logoUrl": "https://grizzlies.lisorect.it/api/public/files/sponsors/561c0b89367c4116afa82c2669dc8f9c.jpg"
   },
   {
    "name": "Köhl GmbH",
    "tier": "Sponsor",
-   "websiteUrl": null,
+   "websiteUrl": "https://koehl.it",
    "logoUrl": "https://grizzlies.lisorect.it/api/public/files/sponsors/781389cf89f543d8a4dff0bcf1d95e16.png"
   },
   {
@@ -660,37 +660,37 @@
   {
    "name": "profiklexs Malerei & Trockenbau",
    "tier": "Sponsor",
-   "websiteUrl": null,
+   "websiteUrl": "https://profiklexs.it",
    "logoUrl": "https://grizzlies.lisorect.it/api/public/files/sponsors/2795450c4d7c467c98e4f4f2e133310b.png"
   },
   {
    "name": "SportForYou",
    "tier": "Sponsor",
-   "websiteUrl": null,
+   "websiteUrl": "https://sportforyou.net",
    "logoUrl": "https://grizzlies.lisorect.it/api/public/files/sponsors/099b7f5220a1419c8871f469ce534d5a.png"
   },
   {
    "name": "Widmann Heizungen",
    "tier": "Sponsor",
-   "websiteUrl": null,
+   "websiteUrl": "https://widmann.bz.it",
    "logoUrl": "https://grizzlies.lisorect.it/api/public/files/sponsors/335fbfaac7d643519c862e46badddf92.png"
   },
   {
    "name": "Le Clou cosmetic artist",
    "tier": "Sponsor",
-   "websiteUrl": null,
+   "websiteUrl": "https://leclou.it",
    "logoUrl": "https://grizzlies.lisorect.it/api/public/files/sponsors/69ca7ddf49ad406c944a794d9f421dfb.png"
   },
   {
    "name": "Metallbau Sanin",
    "tier": "Sponsor",
-   "websiteUrl": null,
+   "websiteUrl": "https://metallbausanin.it",
    "logoUrl": "https://grizzlies.lisorect.it/api/public/files/sponsors/9724bb950b2e4728b574765e9b682ceb.png"
   },
   {
    "name": "Barrel Hockey",
    "tier": "Sponsor",
-   "websiteUrl": null,
+   "websiteUrl": "https://barrelhockey.com",
    "logoUrl": "https://grizzlies.lisorect.it/api/public/files/sponsors/65c412e6449d41a6baa9d9f63fb7cf41.png"
   },
   {
@@ -708,13 +708,13 @@
   {
    "name": "Kofler Maler & Gipskarton",
    "tier": "Sponsor",
-   "websiteUrl": null,
+   "websiteUrl": "http://www.koflerharald.it",
    "logoUrl": "https://grizzlies.lisorect.it/api/public/files/sponsors/826981acfcde40d2a1bbb3ec0f635c09.png"
   },
   {
    "name": "Greg's Hockey Shop",
    "tier": "Sponsor",
-   "websiteUrl": null,
+   "websiteUrl": "https://gregshockeyshop.eu",
    "logoUrl": "https://grizzlies.lisorect.it/api/public/files/sponsors/16248aa5a93b4cbc96ff504252d91a50.png"
   }
  ],
