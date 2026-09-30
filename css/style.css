@@ -156,6 +156,7 @@ p{margin:0 0 1rem}
 
 /* ---------- Sponsoren-Band ---------- */
 .marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.sponsors-cta{text-align:center;margin-top:2rem}
 .marquee__track{list-style:none;margin:0;padding:0;display:flex;width:max-content;gap:1rem;animation:slide 50s linear infinite}
 .marquee:hover .marquee__track{animation-play-state:paused}
 @keyframes slide{to{transform:translateX(-50%)}}
