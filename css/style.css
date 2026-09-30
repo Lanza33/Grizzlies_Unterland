@@ -575,7 +575,7 @@ body:has(.rinkview)>.rinkbg{display:block}
   .footer__grid>div:nth-child(3){grid-column:1;grid-row:2;align-self:start}
 }
 .legal{max-width:760px}
-@media(min-width:761px){.legal{max-width:none;margin:0}.legal>h2,.legal>p{max-width:760px}}
+@media(min-width:761px){.legal{max-width:var(--wrap)}.legal>h2,.legal>p{max-width:760px}}
 .legal h2{font-size:1.15rem;margin:2rem 0 .5rem;color:var(--neon);font-family:var(--hud);letter-spacing:.06em;text-transform:uppercase}
 .legal h2:first-child{margin-top:0}
 .legal p{margin:0 0 .8rem;line-height:1.7}
