@@ -435,7 +435,7 @@ body.pg-sponsoren .pagehead+.section{padding-top:clamp(1rem,2.5vw,1.8rem)}
 .cta-foot::before{content:"";position:absolute;right:-6%;top:0;bottom:0;width:38%;background:rgba(0,0,0,.14);transform:skewX(-20deg);pointer-events:none}
 .cta-foot .cta-red,.cta-foot .footer{background:transparent;margin-top:0}
 .cta-foot .cta-red::before,.cta-foot .footer::before{display:none}
-.cta-foot .footer{border-top:0;box-shadow:none;position:relative;clip-path:none}
+.cta-foot .footer{border-top:0;box-shadow:none;position:relative}
 .cta-foot .cta-red .wrap,.cta-foot .footer .wrap{position:relative;z-index:1}
 
 /* Karten */
@@ -460,7 +460,7 @@ body.pg-sponsoren .pagehead+.section{padding-top:clamp(1rem,2.5vw,1.8rem)}
 .form label{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--neon)}
 .form input,.form textarea,.form select{background:rgba(4,10,8,.8);border:1px solid var(--line)}
 .info dt{font-family:'JetBrains Mono',monospace;color:var(--neon);font-size:.7rem}
-.footer{background:linear-gradient(160deg,var(--iron-dark),var(--iron) 45%,#d3243f);border-top:0;box-shadow:none;position:relative;overflow:hidden;clip-path:polygon(0 clamp(20px,4vw,60px),100% 0,100% 100%,0 100%)}
+.footer{background:linear-gradient(160deg,var(--iron-dark),var(--iron) 45%,#d3243f);border-top:0;box-shadow:none;position:relative;overflow:hidden;clip-path:polygon(0 clamp(10px,1.6vw,22px),100% 0,100% 100%,0 100%)}
 .footer::before{content:"";position:absolute;right:-6%;top:0;bottom:0;width:38%;background:rgba(0,0,0,.14);transform:skewX(-20deg);pointer-events:none}
 .footer .wrap{position:relative;z-index:1}
 .footer h4{font-family:'JetBrains Mono',monospace;color:var(--neon);font-size:.75rem}
@@ -583,9 +583,7 @@ body:has(.rinkview)>.rinkbg{display:block}
 .fsoc a{display:inline-flex;color:var(--wheat);opacity:.8;transition:opacity .2s,color .2s}
 .fsoc a:hover{opacity:1;color:#fff}
 .footer__grid .fsoc{margin-top:1rem}
-.footer__base>span:last-child{display:inline-flex;align-items:center;flex-wrap:wrap;justify-content:flex-end}
-.footer__base .fright{display:inline-flex;align-items:center;gap:1.2rem}
-.footer__base .flegal{display:inline-flex;gap:.5rem}
+.footer__grid .flegal{display:inline-flex;gap:.5rem;margin-top:1rem;font-size:.85rem;opacity:.75}
 .pcard__pos{white-space:nowrap;letter-spacing:.14em}
 .pgrid__group{grid-column:1/-1;font-family:'JetBrains Mono',monospace;font-size:.85rem;letter-spacing:.22em;text-transform:uppercase;color:var(--neon);border-bottom:1px solid var(--neon-dim);padding-bottom:.5rem;margin:1.6rem 0 .2rem}
 .pgrid__group:first-child{margin-top:0}
