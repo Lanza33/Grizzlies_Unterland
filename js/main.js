@@ -33,12 +33,13 @@
 (function(){
   var chips = document.querySelectorAll('.chip[data-filter]');
   if(!chips.length) return;
-  var cards = document.querySelectorAll('.pcard[data-pos]');
-  var groups = document.querySelectorAll('.pgrid__group[data-group]');
   chips.forEach(function(chip){
     chip.addEventListener('click', function(){
       chips.forEach(function(c){ c.setAttribute('aria-pressed', c === chip ? 'true' : 'false'); });
       var f = chip.getAttribute('data-filter');
+      // Karten erst beim Klick suchen: js/playervw.js kann sie nach dem Laden durch aktuelle Daten ersetzen
+      var cards = document.querySelectorAll('.pcard[data-pos]');
+      var groups = document.querySelectorAll('.pgrid__group[data-group]');
       cards.forEach(function(card){ card.hidden = !(f === 'all' || card.getAttribute('data-pos') === f); });
       groups.forEach(function(g){ g.hidden = (f !== 'all'); });
     });

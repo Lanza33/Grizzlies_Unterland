@@ -57,9 +57,16 @@ function replace(start, end, html) {
   // Unverändert (nach DOM-Normalisierung) → nichts anfassen, damit nichts flackert
   const probe = document.createElement('div');
   probe.innerHTML = html;
-  if (probe.innerHTML === innerHtml(start, end)) return;
+  if (probe.innerHTML === innerHtml(start, end)) return false;
   range.deleteContents();
   range.insertNode(range.createContextualFragment(html));
+  return true;
+}
+
+/** Nach neuen Spielerkarten den gerade gewählten Positionsfilter (js/main.js) erneut anwenden. */
+function reapplyTeamFilter() {
+  const active = document.querySelector('.chip[data-filter][aria-pressed="true"]');
+  if (active && active.getAttribute('data-filter') !== 'all') active.click();
 }
 
 /** Monats-/Statistik-Umschalter mit neuen Daten neu verbinden (gleiches Verhalten wie das Seiten-Skript). */
@@ -88,7 +95,7 @@ function apply(s) {
   const image = (url, suggested) => (manifest.get(url) ? prefix + manifest.get(url) : url);
   for (const r of regions()) {
     const html = renderRegion(r.name, s, { lang, prefix, now, current: innerHtml(r.start, r.end), image });
-    if (html !== null) replace(r.start, r.end, html);
+    if (html !== null && replace(r.start, r.end, html) && r.name === 'team') reapplyTeamFilter();
   }
   // Spielplan und Statistiken stecken in Seiten-Skripten → Widgets mit den neuen Daten verbinden
   if (document.getElementById('calGrid')) rebind(calendarMonths(s, L, { lang, prefix }), { head: 'calHead', body: 'calGrid', prev: 'calPrev', next: 'calNext' }, false);
