@@ -557,7 +557,7 @@ body:has(.rinkview)>.rinkbg{display:block}
 .pcard__meta{flex:1}
 .footer__grid>div:nth-child(2) ul{grid-template-columns:repeat(2,auto);grid-auto-flow:column;grid-template-rows:repeat(3,auto);justify-content:start;column-gap:2.5rem}
 .flogo{width:130px;height:auto}
-.footer__grid>div:first-child{align-self:center}
+@media(min-width:761px){.footer__grid>div:first-child{align-self:start}}
 .footer img.flogo{margin-bottom:0;display:block}
 @media(min-width:761px){.footer__grid{grid-template-columns:1fr 1fr auto}.footer__grid>div:nth-child(3){justify-self:end}}
 .footer__grid>div:nth-child(3){align-self:center}
