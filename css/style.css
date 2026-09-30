@@ -463,7 +463,6 @@ body.pg-sponsoren .pagehead+.section{padding-top:clamp(1rem,2.5vw,1.8rem)}
 .footer{background:#000;border-top:0;box-shadow:none;position:relative;overflow:hidden;margin-top:-1px}
 .footer::before{content:"";position:absolute;inset:0;background:linear-gradient(160deg,var(--iron-dark),var(--iron) 45%,#d3243f);clip-path:polygon(0 clamp(10px,1.6vw,22px),100% 0,100% 100%,0 100%)}
 main:has(>.section--dark.on-dark:last-child)+.footer{background:#05190f}
-.footer::after{content:"";position:absolute;right:-6%;top:0;bottom:0;width:38%;background:rgba(0,0,0,.14);transform:skewX(-20deg);pointer-events:none;clip-path:polygon(0 clamp(10px,1.6vw,22px),100% 0,100% 100%,0 100%)}
 .footer .wrap{position:relative;z-index:1}
 .footer h4{font-family:'JetBrains Mono',monospace;color:var(--neon);font-size:.75rem}
 @media(max-width:900px){.nav__links{background:rgba(4,10,8,.97);border-bottom:1px solid var(--neon-dim)}}
