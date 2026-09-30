@@ -8,6 +8,16 @@
   });
 })();
 
+// Spielfeld-Grafik mobil randfüllend (ohne Lücken) statt komplett sichtbar wie am Desktop
+(function(){
+  var svg = document.querySelector('.rinkbg svg');
+  if(!svg) return;
+  var mq = window.matchMedia('(max-width:900px)');
+  function update(){ svg.setAttribute('preserveAspectRatio', mq.matches ? 'xMidYMid slice' : 'xMidYMid meet'); }
+  update();
+  mq.addEventListener('change', update);
+})();
+
 // Sprachauswahl mobil: Dropdown neben dem Menü-Button, aus den Links der Topbar gebaut
 (function(){
   var navIn = document.querySelector('.nav__in'), toggle = document.querySelector('.nav__toggle');

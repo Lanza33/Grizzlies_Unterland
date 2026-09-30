@@ -509,10 +509,11 @@ body>.rinkbg{position:absolute;inset:auto;top:230px;left:-16%;width:132%;height:
 .gamecenter.rinkview>.wrap{width:100%;max-width:min(1040px,86vw)}
 .gamecenter.rinkview .sec-head{margin-bottom:1rem}
 
-/* Spielfeld auf mobiler Ansicht senkrecht statt waagerecht, und deutlich größer */
+/* Spielfeld auf mobiler Ansicht senkrecht statt waagerecht, breiter und auf den Bereich begrenzt (bleedet nicht mehr in den nächsten Abschnitt) */
 @media(max-width:900px){
-  body>.rinkbg{left:0;width:100vw;height:calc(100vh - 230px)}
-  .rinkbg svg{position:absolute;top:50%;left:50%;width:calc((100vh - 230px) * 1.45);height:145vw;transform:translate(-50%,-50%) rotate(90deg)}
+  body>.rinkbg{left:0;width:100vw;height:calc(100vh - 230px);overflow:hidden}
+  .rinkbg svg{position:absolute;top:50%;left:50%;width:calc((100vh - 230px) * 1.2);height:118vw;transform:translate(-50%,-50%) rotate(90deg)}
+  .gamecenter.rinkview+.section{position:relative;z-index:1;margin-top:3rem;background:var(--void)}
 }
 
 /* Game Day auf mobiler Ansicht kompakter: kleinerer Titel, kleinere Logos, VS zwischen den Logos */
