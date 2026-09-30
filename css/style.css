@@ -511,9 +511,9 @@ body>.rinkbg{position:absolute;inset:auto;top:230px;left:-16%;width:132%;height:
 
 /* Spielfeld auf mobiler Ansicht senkrecht statt waagerecht, breiter und auf den Bereich begrenzt (bleedet nicht mehr in den nächsten Abschnitt) */
 @media(max-width:900px){
-  body>.rinkbg{left:0;width:100vw;height:calc(100vh + 140px);overflow:hidden}
-  .rinkbg svg{position:absolute;top:50%;left:50%;width:calc(100vh + 140px);height:115vw;transform:translate(-50%,-50%) rotate(90deg)}
-  .gamecenter.rinkview{min-height:calc(100vh + 140px)}
+  body>.rinkbg{top:110px;left:0;width:100vw;height:calc(100vh + 60px);overflow:hidden}
+  .rinkbg svg{position:absolute;top:50%;left:50%;width:calc(100vh + 60px);height:122vw;transform:translate(-50%,-50%) rotate(90deg)}
+  .gamecenter.rinkview{min-height:calc(100vh + 60px)}
   .gamecenter.rinkview+.section{position:relative;z-index:1;margin-top:3rem;background:var(--void)}
 }
 
