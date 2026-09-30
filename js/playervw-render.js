@@ -171,7 +171,7 @@ const renderers = {
           ? `<div class="pcard__ph"><img src="${src}" alt="${esc(fullName(p))}"></div>`
           : `<div class="pcard__ph pcard__ph--empty"><!-- Foto: <img src="${ctx.prefix}${CONFIG.playerPhotoDir}/name.png" alt="Name"> --></div>`;
         out += `\n      <article class="pcard" data-pos="${pos}"><div class="pcard__num" aria-hidden="true">${p.jerseyNumber ?? '&nbsp;'}</div>${ph}`
-          + `<div class="pcard__meta"><span class="pcard__pos">${L.positions[pos]}</span><h3>${esc(fullName(p))}</h3></div></article>`;
+          + `<div class="pcard__meta"><span class="pcard__pos">${L.positions[pos]}</span><h3>${esc(p.firstName)}<br>${esc(p.lastName)}</h3></div></article>`;
       }
     }
     return out;
