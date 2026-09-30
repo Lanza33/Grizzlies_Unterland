@@ -178,7 +178,7 @@ p{margin:0 0 1rem}
 .chip:hover{border-color:var(--wheat)}
 .chip[aria-pressed="true"]{background:var(--iron);border-color:var(--iron);color:#fff}
 .pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem}
-@media(max-width:600px){.pg-mannschaft .pgrid{grid-template-columns:1fr 1fr;gap:.6rem}}
+@media(max-width:600px){.pg-mannschaft .pgrid,.pg-vorstand .pgrid{grid-template-columns:1fr 1fr;gap:.6rem}}
 .pcard{position:relative;isolation:isolate;overflow:hidden;display:flex;flex-direction:column;background:linear-gradient(160deg,var(--forest),var(--forest-deep) 70%);border:1px solid var(--line);transition:transform .3s,box-shadow .3s,border-color .3s}
 .pcard[hidden]{display:none}
 .pcard:hover{transform:translateY(-6px);box-shadow:0 20px 36px rgba(0,0,0,.5);border-color:var(--iron)}
