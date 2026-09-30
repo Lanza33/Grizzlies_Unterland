@@ -137,10 +137,10 @@ p{margin:0 0 1rem}
 .mo h3{font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:.3rem}
 .mo--big h3{font-size:clamp(2.4rem,5vw,4rem)}
 .mo p{max-width:26em;color:var(--wheat-soft);margin:0 0 .6rem}
-.mo__go{font-family:'Oswald';font-weight:600;font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;color:var(--wheat)}
+.mo__go{font-family:'Oswald';font-weight:600;font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;color:var(--wheat);white-space:nowrap}
 .mo__go::after{content:" →";color:var(--iron-hot)}
 @media(max-width:900px){.mosaic{grid-template-columns:1fr 1fr}.mo--big{grid-column:1/-1;grid-row:auto;min-height:340px}}
-@media(max-width:420px){.mo{padding:1.1rem}.mo h3{font-size:1.3rem}.mo--big h3{font-size:1.7rem}.mo p{display:none}}
+@media(max-width:420px){.mo{padding:1.1rem}.mo h3{font-size:1.3rem}.mo--big h3{font-size:1.7rem}.mo p{display:none}.mo__go{font-size:.7rem;letter-spacing:.06em}}
 
 /* ---------- Fakten ---------- */
 .facts{background:var(--forest);border-block:1px solid var(--line)}
