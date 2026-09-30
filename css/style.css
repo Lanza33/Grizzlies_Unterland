@@ -140,7 +140,7 @@ p{margin:0 0 1rem}
 .mo__go{font-family:'Oswald';font-weight:600;font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;color:var(--wheat)}
 .mo__go::after{content:" →";color:var(--iron-hot)}
 @media(max-width:900px){.mosaic{grid-template-columns:1fr 1fr}.mo--big{grid-column:1/-1;grid-row:auto;min-height:340px}}
-@media(max-width:560px){.mosaic{grid-template-columns:1fr}.mo--wide{grid-column:auto}}
+@media(max-width:420px){.mo{padding:1.1rem}.mo h3{font-size:1.3rem}.mo--big h3{font-size:1.7rem}.mo p{display:none}}
 
 /* ---------- Fakten ---------- */
 .facts{background:var(--forest);border-block:1px solid var(--line)}
