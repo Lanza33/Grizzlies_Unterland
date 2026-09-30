@@ -460,7 +460,8 @@ body.pg-sponsoren .pagehead+.section{padding-top:clamp(1rem,2.5vw,1.8rem)}
 .form label{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--neon)}
 .form input,.form textarea,.form select{background:rgba(4,10,8,.8);border:1px solid var(--line)}
 .info dt{font-family:'JetBrains Mono',monospace;color:var(--neon);font-size:.7rem}
-.footer{background:linear-gradient(160deg,var(--iron-dark),var(--iron) 45%,#d3243f);border-top:0;box-shadow:none;position:relative;overflow:hidden;clip-path:polygon(0 clamp(10px,1.6vw,22px),100% 0,100% 100%,0 100%)}
+.footer{background:linear-gradient(160deg,var(--iron-dark),var(--iron) 45%,#d3243f);border-top:0;box-shadow:none;position:relative;overflow:hidden;clip-path:polygon(0 clamp(10px,1.6vw,22px),100% 0,100% 100%,0 100%);margin-top:-1px}
+main:has(>.section--dark.on-dark:last-child)+.footer{clip-path:none;margin-top:0}
 .footer::before{content:"";position:absolute;right:-6%;top:0;bottom:0;width:38%;background:rgba(0,0,0,.14);transform:skewX(-20deg);pointer-events:none}
 .footer .wrap{position:relative;z-index:1}
 .footer h4{font-family:'JetBrains Mono',monospace;color:var(--neon);font-size:.75rem}
