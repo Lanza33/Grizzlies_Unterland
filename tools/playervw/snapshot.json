@@ -1,6 +1,6 @@
 {
- "version": "cc3601867a95b78d",
- "generatedAt": "2026-09-29T20:02:55.8927671Z",
+ "version": "35157100d0b105f0",
+ "generatedAt": "2026-09-30T07:41:45.2023628Z",
  "teamName": "Grizzlies Unterland",
  "season": "2026/2027",
  "seasonStartYear": 2026,
@@ -23,15 +23,6 @@
    "isNew": true,
    "photoUrl": "https://grizzlies.lisorect.it/api/public/files/players/d2bea658bc2e4ef58b79281dd07f73ae.jpg",
    "cutoutUrl": "https://grizzlies.lisorect.it/api/public/files/players/481cea36e8954518b5333cf89ddff690.png"
-  },
-  {
-   "firstName": "Martina",
-   "lastName": "Marangoni",
-   "position": "G",
-   "jerseyNumber": null,
-   "isNew": true,
-   "photoUrl": null,
-   "cutoutUrl": null
   },
   {
    "firstName": "Bastian",
