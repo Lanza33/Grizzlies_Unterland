@@ -1,6 +1,6 @@
 {
- "version": "d6d296e48191cd5a",
- "generatedAt": "2026-09-30T10:56:41.1907678Z",
+ "version": "d3716e801bf4179e",
+ "generatedAt": "2026-10-01T07:59:38.066613Z",
  "teamName": "Grizzlies Unterland",
  "season": "2026/2027",
  "seasonStartYear": 2026,
@@ -716,6 +716,12 @@
    "tier": "Sponsor",
    "websiteUrl": "https://gregshockeyshop.eu",
    "logoUrl": "https://grizzlies.lisorect.it/api/public/files/sponsors/16248aa5a93b4cbc96ff504252d91a50.png"
+  },
+  {
+   "name": "Lisorect",
+   "tier": "Sponsor",
+   "websiteUrl": "https://www.lisorect.it",
+   "logoUrl": "https://grizzlies.lisorect.it/api/public/files/sponsors/1e6a1bc6619a465089dcde8ddc5944d4.png"
   }
  ],
  "notices": [
