@@ -86,7 +86,8 @@ p{margin:0 0 1rem}
 /* ---------- Bausteine ---------- */
 .kicker{display:inline-block;font-family:'Oswald';font-weight:600;font-size:.82rem;letter-spacing:.24em;text-transform:uppercase;background:var(--iron);color:#fff;padding:.28rem .9rem;transform:skewX(-14deg);margin-bottom:.6rem}
 .section{padding:clamp(3.5rem,7vw,6rem) 0}
-.timeline-section{padding-top:clamp(1rem,2.5vw,2rem)}
+.timeline-section{padding-top:clamp(1rem,2.5vw,2rem);padding-bottom:clamp(1.5rem,3vw,3rem)}
+.intro-section{padding-bottom:clamp(1.5rem,3vw,3rem)}
 .timeline-section+.section--light{padding-top:clamp(1rem,2.5vw,2rem)}
 .section--light{background:var(--light);color:var(--ink)}
 .section--light h1,.section--light h2,.section--light h3{color:var(--forest-deep)}
