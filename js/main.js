@@ -7,8 +7,26 @@
   // (sonst bezieht sich "fixed" auf die Nav-Leiste statt auf den Viewport).
   var slot = document.createComment('nav__links-slot');
   l.parentNode.insertBefore(slot, l);
+  var scrollY = 0;
   function setNavH(){
     if(nav) document.documentElement.style.setProperty('--navh', nav.getBoundingClientRect().bottom + 'px');
+  }
+  // body{overflow:hidden} reicht auf iOS Safari nicht, um den Hintergrund am
+  // Scrollen zu hindern. Darum wird der body beim Oeffnen fixiert und beim
+  // Schliessen exakt an die alte Scroll-Position zurueckgesetzt.
+  function lockScroll(){
+    scrollY = window.scrollY;
+    document.body.style.position = 'fixed';
+    document.body.style.top = -scrollY + 'px';
+    document.body.style.left = '0';
+    document.body.style.right = '0';
+  }
+  function unlockScroll(){
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.left = '';
+    document.body.style.right = '';
+    window.scrollTo(0, scrollY);
   }
   t.addEventListener('click', function(){
     var opening = !l.classList.contains('open');
@@ -18,7 +36,7 @@
     }
     l.classList.toggle('open', opening);
     t.setAttribute('aria-expanded', opening ? 'true' : 'false');
-    document.body.style.overflow = opening ? 'hidden' : '';
+    if(opening) lockScroll(); else unlockScroll();
     if(!opening){
       slot.parentNode.insertBefore(l, slot);
     }
