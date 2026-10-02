@@ -9,9 +9,9 @@
 //   PLAYERVW_API=http://…/snapshot.json node tools/playervw/build.mjs   # andere Quelle (Test)
 
 import { readFile, writeFile, mkdir, access } from 'node:fs/promises';
-import { dirname, join } from 'node:path';
+import { dirname, extname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { CONFIG, renderRegion, playerPhotoPath, sponsorLogoPath, boardPhotoPath, slug } from '../../js/playervw-render.js';
+import { CONFIG, renderRegion, playerPhotoPath, sponsorLogoPath, boardPhotoPath, slug, extOf } from '../../js/playervw-render.js';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(HERE, '..', '..');
@@ -65,6 +65,13 @@ export function plausibility(s, previous) {
 let manifest = {};
 const exists = (p) => access(join(ROOT, p)).then(() => true, () => false);
 const localFor = (url) => Object.keys(manifest).find((k) => manifest[k] === url);
+// Bisherigen Dateinamen behalten, aber mit der Endung der neuen Datei: ein SVG-Logo darf nicht in "logo.png" landen
+// (GitHub Pages liefert nach Endung aus → der Browser kann das Bild sonst nicht anzeigen).
+const fitExt = (path, url) => {
+  if (!path) return path;
+  const ext = extOf(url, extname(path)).toLowerCase();
+  return extname(path).toLowerCase() === ext ? path : path.slice(0, path.length - extname(path).length) + ext;
+};
 
 async function syncAsset(localPath, url) {
   if (!url) return;
@@ -78,6 +85,8 @@ async function syncAsset(localPath, url) {
     await mkdir(dirname(join(ROOT, localPath)), { recursive: true });
     await writeFile(join(ROOT, localPath), Buffer.from(await res.arrayBuffer()));
     manifest[localPath] = url;
+    // Alte Zuordnungen derselben Datei (z.B. vorher "logo.png", jetzt "logo.svg") entfernen
+    for (const k of Object.keys(manifest)) if (k !== localPath && manifest[k] === url) delete manifest[k];
     log('Bild aktualisiert:', localPath);
   } catch (e) {
     warn(`Bild ${url} nicht geladen (${e.message}) – alte Datei bleibt.`);
@@ -86,13 +95,13 @@ async function syncAsset(localPath, url) {
 
 /** Sponsorlogos: bestehende Datei (Manifest oder bisheriges Logo gleichen Namens) behalten, sonst neuer Name. */
 let sponsorLogosDe = new Map();
-const sponsorPath = (sp) => localFor(sp.logoUrl) ?? sponsorLogosDe.get(sp.name) ?? sponsorLogoPath(sp);
+const sponsorPath = (sp) => fitExt(localFor(sp.logoUrl) ?? sponsorLogosDe.get(sp.name), sp.logoUrl) ?? sponsorLogoPath(sp);
 
 async function syncImages(s) {
   for (const sp of s.sponsors) await syncAsset(sponsorPath(sp), sp.logoUrl);
-  for (const p of s.players) if (p.cutoutUrl) await syncAsset(localFor(p.cutoutUrl) ?? playerPhotoPath(p), p.cutoutUrl);
-  for (const b of s.board) if (b.photoUrl) await syncAsset(localFor(b.photoUrl) ?? boardPhotoPath(b), b.photoUrl);
-  for (const d of s.documents ?? []) await syncAsset(localFor(d.url) ?? `assets/dokumente/${slug(d.title)}.pdf`, d.url);
+  for (const p of s.players) if (p.cutoutUrl) await syncAsset(fitExt(localFor(p.cutoutUrl), p.cutoutUrl) ?? playerPhotoPath(p), p.cutoutUrl);
+  for (const b of s.board) if (b.photoUrl) await syncAsset(fitExt(localFor(b.photoUrl), b.photoUrl) ?? boardPhotoPath(b), b.photoUrl);
+  for (const d of s.documents ?? []) await syncAsset(fitExt(localFor(d.url), d.url) ?? `assets/dokumente/${slug(d.title)}.pdf`, d.url);
 }
 
 // ── Seiten schreiben ────────────────────────────────────────────────────────
