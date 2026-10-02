@@ -401,6 +401,8 @@ body.pg-vorstand .pagehead{padding-bottom:clamp(1.2rem,2.5vw,2rem)}
 body.pg-vorstand .pagehead+.section{padding-top:clamp(1rem,2.5vw,1.8rem)}
 body.pg-sponsoren .pagehead{padding-bottom:clamp(1.2rem,2.5vw,2rem)}
 body.pg-sponsoren .pagehead+.section{padding-top:clamp(1rem,2.5vw,1.8rem)}
+body.pg-sponsoren .section--dark.on-dark{background:#05100b url('../assets/team.png') center 20%/cover no-repeat}
+body.pg-sponsoren .section--dark.on-dark::before{background:rgba(0,0,0,.6)}
 
 /* Zeittafel (Verein) */
 .timeline-wrap{overflow:visible;max-width:none;margin:2.6rem auto 0}
