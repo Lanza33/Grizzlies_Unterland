@@ -61,7 +61,8 @@ p{margin:0 0 1rem}
   .nav__links.open{display:flex}
   .nav__links a{padding:1.1rem 0;border-bottom:1px solid var(--line);font-size:1.15rem}
   .nav__links a::after{display:none}
-  .nav__soc{display:flex;justify-content:center;gap:1.8rem;padding-top:1.4rem;margin-top:.6rem;border-top:1px solid var(--line)}
+  .nav__links>a:last-of-type{border-bottom-color:var(--neon-dim)}
+  .nav__soc{display:flex;justify-content:center;gap:1.8rem;padding-top:1.4rem;margin-top:.6rem}
   .nav__soc a{padding:0;border:0;color:#fff;opacity:.85;display:inline-flex}
   .nav__soc a:hover{opacity:1}
 }
@@ -499,7 +500,7 @@ body.pg-sponsoren .pagehead+.section{padding-top:clamp(1rem,2.5vw,1.8rem)}
 main:has(>.section--dark.on-dark:last-child)+.footer{background:#05190f}
 .footer .wrap{position:relative;z-index:1}
 .footer h4{font-family:'JetBrains Mono',monospace;color:var(--neon);font-size:.75rem}
-@media(max-width:900px){.nav__links{background:#000;border-bottom:1px solid var(--neon-dim)}}
+@media(max-width:900px){.nav__links{background:#000}}
 @media(prefers-reduced-motion:reduce){.hero__logo,.strip__game b::before{animation:none!important}}
 
 /* Eishockey-Feld + Puck */
