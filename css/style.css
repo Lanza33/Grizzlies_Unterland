@@ -85,7 +85,7 @@ p{margin:0 0 1rem}
 .pagehead{position:relative;isolation:isolate;overflow:hidden;padding:clamp(3.5rem,8vw,7rem) 0 clamp(3rem,6vw,5rem)}
 .pagehead::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,var(--forest-night),transparent 45%),linear-gradient(90deg,rgba(7,22,15,.96) 15%,rgba(7,22,15,.7) 60%,rgba(7,22,15,.5))}
 .pagehead__in{max-width:var(--wrap);margin:0 auto;padding:0 var(--gutter)}
-.pagehead h1{font-size:clamp(2.2rem,5.5vw,4.2rem);margin:.5rem 0 .4rem;line-height:1.02;text-shadow:0 4px 30px rgba(0,0,0,.5)}
+.pagehead h1{font-size:clamp(1.9rem,3.8vw,3rem);margin:.5rem 0 .4rem;line-height:1.02;text-shadow:0 4px 30px rgba(0,0,0,.5)}
 .pagehead p{max-width:560px;font-size:1.15rem;color:var(--wheat);margin:0}
 
 /* ---------- Bausteine ---------- */
@@ -102,7 +102,7 @@ p{margin:0 0 1rem}
 .section--light p{color:var(--ink-soft)}
 .section--dark{background:var(--forest-deep) url('../assets/bg-smoke.jpg') center/cover;position:relative;isolation:isolate}
 .section--dark::before{content:"";position:absolute;inset:0;z-index:-1;background:rgba(7,22,15,.78)}
-.h2{font-size:clamp(2.2rem,5vw,3.8rem);margin:0 0 1rem}
+.h2{font-size:clamp(1.7rem,3.4vw,2.7rem);margin:0 0 1rem}
 .lede{font-size:1.2rem;max-width:34em;color:var(--wheat)}
 .section--light .lede{color:var(--ink-soft)}
 .sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:1.5rem;flex-wrap:wrap;margin-bottom:2rem}
@@ -180,7 +180,7 @@ p{margin:0 0 1rem}
 .cta-red{background:var(--iron);position:relative;overflow:hidden;padding:clamp(3.5rem,7vw,6rem) 0;clip-path:polygon(0 clamp(20px,4vw,60px),100% 0,100% 100%,0 100%);margin-top:-1px}
 .cta-red::before{content:"";position:absolute;right:-6%;top:0;bottom:0;width:38%;background:rgba(0,0,0,.14);transform:skewX(-20deg)}
 .cta-red .wrap{position:relative;display:flex;justify-content:space-between;align-items:center;gap:2rem;flex-wrap:wrap;padding-top:clamp(1rem,3vw,2.5rem)}
-.cta-red h2{font-size:clamp(2.8rem,8vw,6rem);margin:0;color:#fff}
+.cta-red h2{font-size:clamp(2.2rem,4.5vw,3.6rem);margin:0;color:#fff}
 .cta-red p{color:#fff;font-size:1.15rem;max-width:18em}
 
 /* ---------- Mannschaft / Staff ---------- */
