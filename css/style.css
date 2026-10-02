@@ -228,7 +228,7 @@ p{margin:0 0 1rem}
 
 /* ---------- Sponsoren-Seite ---------- */
 .spons{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem}
-.spon{aspect-ratio:3/2;display:flex;align-items:center;justify-content:center;text-align:center;border:2px dashed var(--line-dark);background:#fff;color:var(--ink-soft);font-family:'Oswald';text-transform:uppercase;letter-spacing:.14em;font-size:.85rem;padding:1rem}
+.spon{aspect-ratio:3/2;display:flex;align-items:center;justify-content:center;text-align:center;border:2px dashed var(--line-dark);background:#fff;color:var(--ink-soft);font-family:'Oswald';text-transform:uppercase;letter-spacing:.14em;font-size:.85rem;padding:1rem;min-width:0}
 .spon--main{grid-column:1/-1;aspect-ratio:auto}
 .spon--logo{background:var(--forest-night);border:0;min-height:200px;transition:box-shadow .3s}
 .spon--logo:hover{box-shadow:0 20px 40px rgba(0,0,0,.3)}
@@ -244,6 +244,19 @@ p{margin:0 0 1rem}
 .spon--logo-light img[src*="metallbau"]{height:90px}
 .spon--logo-light img[src*="barrel"]{height:80px}
 .spon--logo-light img[src*="sparkasse"]{height:72px}
+@media(max-width:700px){
+  .spon{padding:.7rem}
+  .spon--logo-light{padding:.6rem}
+  .spon--logo-light img{height:36px}
+  .spon--logo-light img[src*="sfy"]{height:78px}
+  .spon--logo-light img[src*="tschigg"]{height:48px}
+  .spon--logo-light img[src*="greg-hockeyshop"]{height:84px}
+  .spon--logo-light img[src*="widmann"]{height:58px}
+  .spon--logo-light img[src*="faeckl"]{height:58px}
+  .spon--logo-light img[src*="metallbau"]{height:58px}
+  .spon--logo-light img[src*="barrel"]{height:52px}
+  .spon--logo-light img[src*="sparkasse"]{height:46px}
+}
 
 /* ---------- Kontakt ---------- */
 .contact{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(1.5rem,5vw,4rem);align-items:start}
@@ -579,7 +592,8 @@ body:has(.rinkview)>.rinkbg{display:block}
 
 /* Footer auf mobiler Ansicht: Logo oben links, Kontakt darunter links, Quick Links rechts auf Höhe Kontakt */
 @media(max-width:760px){
-  .footer__grid{grid-template-columns:1fr 1fr;column-gap:2rem;row-gap:1.6rem}
+  .footer__grid{grid-template-columns:1.3fr 1fr;column-gap:1.2rem;row-gap:1.6rem}
+  .footer__grid>div{min-width:0}
   .footer__grid>div:first-child{grid-column:1;grid-row:1;align-self:start}
   .footer__grid>div:nth-child(2){grid-column:2;grid-row:2;align-self:start}
   .footer__grid>div:nth-child(2) ul{grid-template-columns:1fr;grid-auto-flow:row}
