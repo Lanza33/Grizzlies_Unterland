@@ -125,7 +125,7 @@ p{margin:0 0 1rem}
 .game::before{content:"";position:absolute;right:-8%;top:-40%;width:50%;height:200%;background:rgba(200,32,58,.12);transform:skewX(-20deg)}
 .game>*{position:relative}
 .game__team{display:flex;flex-direction:column;align-items:center;gap:1rem;text-align:center}
-.game__team img{width:min(210px,100%)}
+.game__team img{width:min(210px,100%);height:clamp(130px,19vw,210px);object-fit:contain}
 .game__team b,.game__q{font-family:'Oswald';font-size:clamp(1.3rem,3vw,2rem);text-transform:uppercase;letter-spacing:.06em;color:#fff}
 .game__q{display:flex;align-items:center;justify-content:center;width:min(190px,100%);aspect-ratio:1;border-radius:50%;border:3px dashed var(--line);font-size:5rem;color:var(--wheat);opacity:.7}
 .game__mid{text-align:center}
@@ -635,8 +635,6 @@ body:has(.rinkview)>.rinkbg{display:block}
 .fx__teams small{flex-basis:100%}
 .fx__logo{width:clamp(3.6rem,7vw,5rem);height:clamp(3.6rem,7vw,5rem);object-fit:contain;background:transparent;filter:drop-shadow(0 0 6px rgba(0,0,0,.4))}
 .fx__date{gap:.15rem}
-.game__team--opp img{width:min(210px,100%);object-fit:contain}
-.game__team:not(.game__team--opp) img{width:min(300px,100%)}
 .nav__logo img{height:102px;width:auto}
 .section--tight{padding-top:1.6rem}
 .cal{margin-top:2rem}
