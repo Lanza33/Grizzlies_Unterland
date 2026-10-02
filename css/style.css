@@ -56,9 +56,9 @@ p{margin:0 0 1rem}
   .nav__in{justify-content:flex-start;gap:.6rem;padding-block:1.1rem}
   .nav__toggle{display:flex}
   .nav__langsel{display:inline-block}
-  .nav__links{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;background:var(--forest-night);border-bottom:3px solid var(--iron);padding:.4rem var(--gutter) 1rem}
+  .nav__links{display:none;position:fixed;left:0;right:0;top:var(--navh,72px);bottom:0;flex-direction:column;justify-content:center;background:var(--forest-night);padding:1rem var(--gutter) 2rem;overflow-y:auto}
   .nav__links.open{display:flex}
-  .nav__links a{padding:.9rem 0;border-bottom:1px solid var(--line)}
+  .nav__links a{padding:1.1rem 0;border-bottom:1px solid var(--line);font-size:1.15rem}
   .nav__links a::after{display:none}
 }
 .nav--hero{position:relative;background:transparent;backdrop-filter:none;border:0;z-index:3}

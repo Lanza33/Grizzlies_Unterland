@@ -1,11 +1,29 @@
-// Mobile-Navigation
+// Mobile-Navigation: Dropdown als ganzseitiges Overlay unterhalb der Nav-Leiste
 (function(){
-  var t = document.querySelector('.nav__toggle'), l = document.querySelector('.nav__links');
+  var t = document.querySelector('.nav__toggle'), l = document.querySelector('.nav__links'), nav = document.querySelector('.nav');
   if(!t || !l) return;
+  // .nav hat backdrop-filter, das macht die Nav-Leiste zum Containing Block fuer
+  // position:fixed-Kinder. Darum wird das Menu beim Oeffnen an <body> gehaengt
+  // (sonst bezieht sich "fixed" auf die Nav-Leiste statt auf den Viewport).
+  var slot = document.createComment('nav__links-slot');
+  l.parentNode.insertBefore(slot, l);
+  function setNavH(){
+    if(nav) document.documentElement.style.setProperty('--navh', nav.getBoundingClientRect().bottom + 'px');
+  }
   t.addEventListener('click', function(){
-    var open = l.classList.toggle('open');
-    t.setAttribute('aria-expanded', open ? 'true' : 'false');
+    var opening = !l.classList.contains('open');
+    if(opening){
+      setNavH();
+      document.body.appendChild(l);
+    }
+    l.classList.toggle('open', opening);
+    t.setAttribute('aria-expanded', opening ? 'true' : 'false');
+    document.body.style.overflow = opening ? 'hidden' : '';
+    if(!opening){
+      slot.parentNode.insertBefore(l, slot);
+    }
   });
+  window.addEventListener('resize', function(){ if(l.classList.contains('open')) setNavH(); });
 })();
 
 // Sprachauswahl mobil: Dropdown neben dem Menü-Button, aus den Links der Topbar gebaut
