@@ -212,7 +212,7 @@ p{margin:0 0 1rem}
 .section--light .split img{filter:drop-shadow(0 12px 24px rgba(0,0,0,.25))}
 .values{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1rem;margin-top:2.2rem}
 .values div{background:#fff;padding:1.8rem 1.5rem;border-top:5px solid var(--iron);box-shadow:0 8px 24px rgba(13,31,23,.08)}
-.values h3{font-size:1.4rem;margin-bottom:.5rem;color:var(--forest-deep)}
+.values h3{font-size:1.4rem;margin-bottom:1.1rem;color:var(--forest-deep);text-align:center}
 .values p{font-size:.95rem;color:var(--ink-soft);margin:0}
 
 /* ---------- Sponsoren-Seite ---------- */
