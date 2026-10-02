@@ -287,7 +287,8 @@ p{margin:0 0 1rem}
 .faddr{display:flex;align-items:flex-start}
 .faddr .ficon{margin-top:.2rem;flex:none}
 .faddr span{line-height:1.5;text-align:left}
-.fblock{display:flex;flex-direction:column;gap:.4rem}
+.footer__grid>div:nth-child(3) ul{gap:.9rem}
+.fblock{display:flex;flex-direction:column;gap:.5rem}
 .fweeeb{display:inline-flex;vertical-align:middle;opacity:.85}
 .fweeeb img{height:27px;width:auto;display:block}
 @media(max-width:760px){.fweeeb img{height:22px}}
