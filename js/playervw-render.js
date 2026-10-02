@@ -13,7 +13,8 @@ export const CONFIG = {
   seasonLastMonth: 3,
   // Ortsnamen auf Italienisch/Englisch
   venues: {
-    Ritten: { it: 'Renon', en: 'Renon' }
+    Ritten: { it: 'Renon', en: 'Renon' },
+    Auer: { it: 'Ora', en: 'Ora' }
   },
   // Übersetzte Sponsornamen
   sponsorNames: {
