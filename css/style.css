@@ -215,8 +215,8 @@ p{margin:0 0 1rem}
 @media(max-width:640px){.fx{grid-template-columns:1fr;padding:0 0 1rem;gap:.8rem}.fx__date{clip-path:none;flex-direction:row;align-items:baseline;gap:1rem}.fx__teams,.fx .tag{margin-left:1.2rem}.fx .tag{justify-self:start}}
 
 /* ---------- Verein ---------- */
-.identity{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:clamp(2rem,6vw,4rem)}
-.identity__img{width:min(240px,100%);height:auto;filter:drop-shadow(0 16px 32px rgba(0,0,0,.4))}
+.identity{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:clamp(2rem,6vw,4rem);margin-top:clamp(2rem,4vw,3rem)}
+.identity__img{width:min(420px,100%);height:auto;filter:drop-shadow(0 16px 32px rgba(0,0,0,.4))}
 .values{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1rem;margin-top:2.2rem}
 .values div{background:#fff;padding:1.8rem 1.5rem;border-top:5px solid var(--iron);box-shadow:0 8px 24px rgba(13,31,23,.08)}
 .values h3{font-size:1.4rem;margin-bottom:.5rem;color:var(--forest-deep)}
