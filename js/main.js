@@ -55,6 +55,40 @@
   });
 })();
 
+// Unsere Werte (Verein) -> Punkte-Navigation fürs mobile Swipe-Karussell
+(function(){
+  var slider = document.getElementById('valuesSlider'), dots = document.getElementById('valuesDots');
+  if(!slider || !dots) return;
+  var cards = Array.prototype.slice.call(slider.children);
+  if(!cards.length) return;
+  cards.forEach(function(card, i){
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.setAttribute('aria-label', 'Zu Karte ' + (i + 1));
+    if(i === 0) b.setAttribute('aria-current', 'true');
+    b.addEventListener('click', function(){
+      card.scrollIntoView({behavior:'smooth', inline:'center', block:'nearest'});
+    });
+    dots.appendChild(b);
+  });
+  var buttons = Array.prototype.slice.call(dots.children);
+  var ticking = false;
+  slider.addEventListener('scroll', function(){
+    if(ticking) return;
+    ticking = true;
+    requestAnimationFrame(function(){
+      var mid = slider.scrollLeft + slider.clientWidth / 2;
+      var closest = 0, min = Infinity;
+      cards.forEach(function(card, i){
+        var d = Math.abs((card.offsetLeft + card.offsetWidth / 2) - mid);
+        if(d < min){ min = d; closest = i; }
+      });
+      buttons.forEach(function(b, i){ if(i === closest) b.setAttribute('aria-current', 'true'); else b.removeAttribute('aria-current'); });
+      ticking = false;
+    });
+  }, {passive:true});
+})();
+
 // Kalender-Kachel (Startseite) -> immer aktuellen Monat anzeigen
 (function(){
   var el = document.querySelector('.mo__cal-month');
