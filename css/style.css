@@ -52,14 +52,18 @@ p{margin:0 0 1rem}
 .nav__burger::before{top:-6px}
 .nav__burger::after{top:6px}
 .nav__langsel{display:none;height:2.7rem;flex:0 0 auto;background:rgba(255,255,255,.05);border:2px solid var(--line);color:#fff;font-family:'Oswald';letter-spacing:.08em;text-transform:uppercase;font-size:.85rem;padding:0 .4rem;cursor:pointer}
+.nav__soc{display:none}
 @media(max-width:900px){
   .nav__in{justify-content:flex-start;gap:.6rem;padding-block:1.1rem}
   .nav__toggle{display:flex}
   .nav__langsel{display:inline-block}
-  .nav__links{display:none;position:fixed;left:0;right:0;top:var(--navh,72px);bottom:0;flex-direction:column;justify-content:center;background:var(--forest-night);padding:1rem var(--gutter) 2rem;overflow-y:auto}
+  .nav__links{display:none;position:fixed;left:0;right:0;top:var(--navh,72px);bottom:0;flex-direction:column;justify-content:flex-start;background:var(--forest-night);padding:1.2rem var(--gutter) 2rem;overflow-y:auto}
   .nav__links.open{display:flex}
   .nav__links a{padding:1.1rem 0;border-bottom:1px solid var(--line);font-size:1.15rem}
   .nav__links a::after{display:none}
+  .nav__soc{display:flex;justify-content:center;gap:1.8rem;padding-top:1.4rem;margin-top:.6rem;border-top:1px solid var(--line)}
+  .nav__soc a{padding:0;border:0;color:#fff;opacity:.85;display:inline-flex}
+  .nav__soc a:hover{opacity:1}
 }
 .nav--hero{position:relative;background:transparent;backdrop-filter:none;border:0;z-index:3}
 .nav--hero .nav__in{padding-bottom:clamp(1.6rem,3vw,2.6rem);padding-top:.5rem}
@@ -495,7 +499,7 @@ body.pg-sponsoren .pagehead+.section{padding-top:clamp(1rem,2.5vw,1.8rem)}
 main:has(>.section--dark.on-dark:last-child)+.footer{background:#05190f}
 .footer .wrap{position:relative;z-index:1}
 .footer h4{font-family:'JetBrains Mono',monospace;color:var(--neon);font-size:.75rem}
-@media(max-width:900px){.nav__links{background:rgba(4,10,8,.97);border-bottom:1px solid var(--neon-dim)}}
+@media(max-width:900px){.nav__links{background:#000;border-bottom:1px solid var(--neon-dim)}}
 @media(prefers-reduced-motion:reduce){.hero__logo,.strip__game b::before{animation:none!important}}
 
 /* Eishockey-Feld + Puck */
