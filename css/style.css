@@ -638,6 +638,7 @@ body:has(.rinkview)>.rinkbg{display:block}
 .fx__logo{width:clamp(3.6rem,7vw,5rem);height:clamp(3.6rem,7vw,5rem);object-fit:contain;background:transparent;filter:drop-shadow(0 0 6px rgba(0,0,0,.4))}
 .fx__date{gap:.15rem}
 .game__team--opp img{width:min(210px,100%);object-fit:contain}
+.game__team:not(.game__team--opp) img{width:min(300px,100%)}
 .nav__logo img{height:102px;width:auto}
 .section--tight{padding-top:1.6rem}
 .cal{margin-top:2rem}
