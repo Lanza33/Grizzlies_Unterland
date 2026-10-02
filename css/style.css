@@ -623,6 +623,12 @@ body:has(.rinkview)>.rinkbg{display:block}
 .fsoc a:hover{opacity:1;color:#fff}
 .footer__grid .fsoc{margin-top:1rem}
 .footer__base .flegal{display:inline-flex;gap:.5rem;align-items:center;margin:0}
+.footer__base .fsoc{display:none}
+@media(max-width:760px){
+  .footer__grid .fsoc{display:none}
+  .footer__base .fsoc{display:inline-flex;margin:0}
+  .footer__base .flegal{gap:.9rem}
+}
 .pcard__pos{white-space:nowrap;letter-spacing:.14em}
 .pgrid__group{grid-column:1/-1;font-family:'JetBrains Mono',monospace;font-size:.85rem;letter-spacing:.22em;text-transform:uppercase;color:var(--neon);border-bottom:1px solid var(--neon-dim);padding-bottom:.5rem;margin:1.6rem 0 .2rem}
 .pgrid__group:first-child{margin-top:0}
