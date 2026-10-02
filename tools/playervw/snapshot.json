@@ -1,6 +1,6 @@
 {
- "version": "d3716e801bf4179e",
- "generatedAt": "2026-10-01T07:59:38.066613Z",
+ "version": "640af357d5aed829",
+ "generatedAt": "2026-10-02T07:43:40.9427616Z",
  "teamName": "Grizzlies Unterland",
  "season": "2026/2027",
  "seasonStartYear": 2026,
@@ -210,7 +210,8 @@
     "logoUrl": "https://grizzlies.lisorect.it/img/teams/grizzlies.png"
    },
    "notes": null,
-   "result": null
+   "result": null,
+   "id": 1
   },
   {
    "startsAt": "2026-10-25T16:30:00",
@@ -225,7 +226,8 @@
     "logoUrl": "https://grizzlies.lisorect.it/img/teams/grizzlies.png"
    },
    "notes": null,
-   "result": null
+   "result": null,
+   "id": 2
   },
   {
    "startsAt": "2026-11-01T21:00:00",
@@ -240,7 +242,8 @@
     "logoUrl": "https://grizzlies.lisorect.it/img/teams/grizzlies.png"
    },
    "notes": null,
-   "result": null
+   "result": null,
+   "id": 3
   },
   {
    "startsAt": "2026-11-07T21:00:00",
@@ -255,7 +258,8 @@
     "logoUrl": "https://grizzlies.lisorect.it/img/teams/grizzlies.png"
    },
    "notes": null,
-   "result": null
+   "result": null,
+   "id": 4
   },
   {
    "startsAt": "2026-11-14T18:30:00",
@@ -270,7 +274,8 @@
     "logoUrl": "https://grizzlies.lisorect.it/img/teams/softy.png"
    },
    "notes": null,
-   "result": null
+   "result": null,
+   "id": 5
   },
   {
    "startsAt": "2026-11-22T18:30:00",
@@ -285,7 +290,8 @@
     "logoUrl": "https://grizzlies.lisorect.it/img/teams/floschn.png"
    },
    "notes": null,
-   "result": null
+   "result": null,
+   "id": 6
   },
   {
    "startsAt": "2026-11-29T16:30:00",
@@ -300,7 +306,8 @@
     "logoUrl": "https://grizzlies.lisorect.it/img/teams/grizzlies.png"
    },
    "notes": null,
-   "result": null
+   "result": null,
+   "id": 7
   },
   {
    "startsAt": "2026-12-06T18:45:00",
@@ -315,7 +322,8 @@
     "logoUrl": "https://grizzlies.lisorect.it/img/teams/grizzlies.png"
    },
    "notes": null,
-   "result": null
+   "result": null,
+   "id": 8
   },
   {
    "startsAt": "2026-12-13T18:30:00",
@@ -330,7 +338,8 @@
     "logoUrl": "https://grizzlies.lisorect.it/img/teams/skulls.png"
    },
    "notes": null,
-   "result": null
+   "result": null,
+   "id": 9
   },
   {
    "startsAt": "2026-12-20T18:30:00",
@@ -345,7 +354,8 @@
     "logoUrl": "https://grizzlies.lisorect.it/img/teams/grisu.png"
    },
    "notes": null,
-   "result": null
+   "result": null,
+   "id": 10
   },
   {
    "startsAt": "2026-12-26T18:45:00",
@@ -360,7 +370,8 @@
     "logoUrl": "https://grizzlies.lisorect.it/img/teams/grizzlies.png"
    },
    "notes": null,
-   "result": null
+   "result": null,
+   "id": 11
   },
   {
    "startsAt": "2027-01-03T18:30:00",
@@ -375,7 +386,8 @@
     "logoUrl": "https://grizzlies.lisorect.it/img/teams/zone.png"
    },
    "notes": null,
-   "result": null
+   "result": null,
+   "id": 12
   },
   {
    "startsAt": "2027-01-10T18:30:00",
@@ -390,7 +402,8 @@
     "logoUrl": "https://grizzlies.lisorect.it/img/teams/tuifl.png"
    },
    "notes": null,
-   "result": null
+   "result": null,
+   "id": 13
   },
   {
    "startsAt": "2027-01-16T18:30:00",
@@ -405,7 +418,8 @@
     "logoUrl": "https://grizzlies.lisorect.it/img/teams/zska.png"
    },
    "notes": null,
-   "result": null
+   "result": null,
+   "id": 14
   },
   {
    "startsAt": "2027-01-24T17:45:00",
@@ -420,7 +434,8 @@
     "logoUrl": "https://grizzlies.lisorect.it/img/teams/grizzlies.png"
    },
    "notes": null,
-   "result": null
+   "result": null,
+   "id": 15
   },
   {
    "startsAt": "2027-01-30T18:30:00",
@@ -435,7 +450,8 @@
     "logoUrl": "https://grizzlies.lisorect.it/img/teams/eldorado.png"
    },
    "notes": null,
-   "result": null
+   "result": null,
+   "id": 16
   }
  ],
  "scorers": [],
@@ -721,7 +737,7 @@
    "name": "Lisorect",
    "tier": "Sponsor",
    "websiteUrl": "https://www.lisorect.it",
-   "logoUrl": "https://grizzlies.lisorect.it/api/public/files/sponsors/1e6a1bc6619a465089dcde8ddc5944d4.png"
+   "logoUrl": "https://grizzlies.lisorect.it/api/public/files/sponsors/eb37ad33e4894481a38367276627f0d6.svg"
   }
  ],
  "notices": [
