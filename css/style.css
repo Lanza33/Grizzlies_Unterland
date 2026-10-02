@@ -94,9 +94,7 @@ p{margin:0 0 1rem}
 .timeline-section{padding-top:clamp(1.8rem,3.5vw,2.5rem);padding-bottom:clamp(2.6rem,4.5vw,3.6rem)}
 .intro-section{padding-bottom:clamp(2.6rem,4.5vw,3.6rem)}
 .intro-section p:last-child{margin-bottom:0}
-.timeline-section+.section--light{padding-top:clamp(1.8rem,3.5vw,2.5rem);padding-bottom:clamp(2.6rem,4.5vw,3.6rem)}
-.timeline-section~.section--dark.on-dark{padding-top:clamp(1.8rem,3.5vw,2.5rem);padding-bottom:clamp(2.6rem,4.5vw,3.6rem)}
-.timeline-section~.section--light:last-of-type{padding-top:clamp(1.8rem,3.5vw,2.5rem)}
+.timeline-section~.section{padding-top:clamp(1.8rem,3.5vw,2.5rem);padding-bottom:clamp(2.6rem,4.5vw,3.6rem)}
 .section--light{background:var(--light);color:var(--ink)}
 .section--light h1,.section--light h2,.section--light h3{color:var(--forest-deep)}
 .section--light p{color:var(--ink-soft)}
@@ -269,6 +267,7 @@ p{margin:0 0 1rem}
 @media(max-width:820px){.contact{grid-template-columns:1fr}}
 .info{margin:1rem 0 0;padding:0}
 .info dt{font-family:'Oswald';font-weight:600;font-size:.8rem;letter-spacing:.22em;text-transform:uppercase;color:var(--iron-hot);margin-top:1.4rem}
+.info dt.info__soclabel{margin-top:3rem}
 .info dd{margin:.2rem 0 0;font-size:1.15rem}
 .info a{text-decoration-color:var(--iron-hot);text-underline-offset:4px}
 .info__soc{display:inline-flex;gap:.9rem;align-items:center}
@@ -404,8 +403,6 @@ body.pg-vorstand .pagehead{padding-bottom:clamp(1.2rem,2.5vw,2rem)}
 body.pg-vorstand .pagehead+.section{padding-top:clamp(1rem,2.5vw,1.8rem)}
 body.pg-sponsoren .pagehead{padding-bottom:clamp(1.2rem,2.5vw,2rem)}
 body.pg-sponsoren .pagehead+.section{padding-top:clamp(1rem,2.5vw,1.8rem)}
-body.pg-sponsoren .section--dark.on-dark{background:#05100b url('../assets/team.png') center 5%/cover no-repeat}
-body.pg-sponsoren .section--dark.on-dark::before{background:rgba(0,0,0,.6)}
 body.pg-sponsoren .section--dark.on-dark .btn--red{background:transparent;border-color:var(--iron-hot);color:var(--iron-hot);box-shadow:none;margin-top:clamp(3rem,7vw,5.5rem)}
 body.pg-sponsoren .section--dark.on-dark .btn--red:hover{background:rgba(200,32,58,.15);filter:none;color:#fff;border-color:#fff}
 
@@ -503,7 +500,7 @@ body.pg-sponsoren .section--dark.on-dark .btn--red:hover{background:rgba(200,32,
 .info__soc a:hover{color:var(--neon)}
 .footer{background:#000;border-top:0;box-shadow:none;position:relative;overflow:hidden;margin-top:-1px}
 .footer::before{content:"";position:absolute;inset:0;background:linear-gradient(160deg,var(--iron-dark),var(--iron) 45%,#d3243f);clip-path:polygon(0 clamp(10px,1.6vw,22px),100% 0,100% 100%,0 100%)}
-main:has(>.section--dark.on-dark:last-child)+.footer{background:#05190f}
+main:has(>.section--dark.on-dark:last-child)+.footer{background:#000}
 .footer .wrap{position:relative;z-index:1}
 .footer h4{font-family:'JetBrains Mono',monospace;color:var(--neon);font-size:.75rem}
 @media(max-width:900px){.nav__links{background:#000}}
@@ -557,7 +554,7 @@ body:has(.rinkview)>.rinkbg svg *{opacity:.9}
 body>.rinkbg{position:absolute;inset:auto;top:230px;left:-16%;width:132%;height:calc(100vh - 230px);min-height:600px}
 
 /* Game Day mitten im Spielfeld */
-.gamecenter.rinkview{display:flex;align-items:center;justify-content:center;padding-top:3rem;padding-bottom:0;height:auto;min-height:calc(100vh - 230px)}
+.gamecenter.rinkview{display:flex;align-items:center;justify-content:center;padding-top:4.5rem;padding-bottom:0;height:auto;min-height:calc(100vh - 230px)}
 .gamecenter.rinkview{min-height:max(calc(100vh - 230px),600px)}
 .gamecenter.rinkview>.wrap{width:100%;max-width:min(1040px,86vw)}
 .gamecenter.rinkview .sec-head{margin-bottom:1rem}
