@@ -271,6 +271,9 @@ p{margin:0 0 1rem}
 .info dt{font-family:'Oswald';font-weight:600;font-size:.8rem;letter-spacing:.22em;text-transform:uppercase;color:var(--iron-hot);margin-top:1.4rem}
 .info dd{margin:.2rem 0 0;font-size:1.15rem}
 .info a{text-decoration-color:var(--iron-hot);text-underline-offset:4px}
+.info__soc{display:inline-flex;gap:.9rem;align-items:center}
+.info__soc a{opacity:.85;transition:opacity .2s,color .2s}
+.info__soc a:hover{opacity:1;color:var(--iron-hot)}
 .form{display:grid;gap:1.1rem}
 .form label{display:grid;gap:.4rem;font-family:'Oswald';font-weight:500;font-size:.82rem;letter-spacing:.18em;text-transform:uppercase;color:var(--wheat)}
 .form input,.form textarea,.form select{font-family:'Barlow';font-size:1rem;letter-spacing:0;text-transform:none;background:var(--forest-night);color:#fff;border:1px solid var(--line);padding:.85rem 1rem;border-radius:0;width:100%}
@@ -403,6 +406,8 @@ body.pg-sponsoren .pagehead{padding-bottom:clamp(1.2rem,2.5vw,2rem)}
 body.pg-sponsoren .pagehead+.section{padding-top:clamp(1rem,2.5vw,1.8rem)}
 body.pg-sponsoren .section--dark.on-dark{background:#05100b url('../assets/team.png') center 5%/cover no-repeat}
 body.pg-sponsoren .section--dark.on-dark::before{background:rgba(0,0,0,.6)}
+body.pg-sponsoren .section--dark.on-dark .btn--red{background:transparent;border-color:var(--iron-hot);color:var(--iron-hot);box-shadow:none;margin-top:clamp(3rem,7vw,5.5rem)}
+body.pg-sponsoren .section--dark.on-dark .btn--red:hover{background:rgba(200,32,58,.15);filter:none;color:#fff;border-color:#fff}
 
 /* Zeittafel (Verein) */
 .timeline-wrap{overflow:visible;max-width:none;margin:2.6rem auto 0}
@@ -495,6 +500,7 @@ body.pg-sponsoren .section--dark.on-dark::before{background:rgba(0,0,0,.6)}
 .form label{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--neon)}
 .form input,.form textarea,.form select{background:rgba(4,10,8,.8);border:1px solid var(--line)}
 .info dt{font-family:'JetBrains Mono',monospace;color:var(--neon);font-size:.7rem}
+.info__soc a:hover{color:var(--neon)}
 .footer{background:#000;border-top:0;box-shadow:none;position:relative;overflow:hidden;margin-top:-1px}
 .footer::before{content:"";position:absolute;inset:0;background:linear-gradient(160deg,var(--iron-dark),var(--iron) 45%,#d3243f);clip-path:polygon(0 clamp(10px,1.6vw,22px),100% 0,100% 100%,0 100%)}
 main:has(>.section--dark.on-dark:last-child)+.footer{background:#05190f}
