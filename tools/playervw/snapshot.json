@@ -1,6 +1,6 @@
 {
- "version": "0c087f8847c0a2f1",
- "generatedAt": "2026-10-02T13:38:14.3744351Z",
+ "version": "29d6994a3f4598d8",
+ "generatedAt": "2026-10-03T07:16:13.1871041Z",
  "teamName": "Grizzlies Unterland",
  "season": "2026/2027",
  "seasonStartYear": 2026,
@@ -708,7 +708,7 @@
   {
    "name": "Le Clou cosmetic artist",
    "tier": "Sponsor",
-   "websiteUrl": "https://leclou.it",
+   "websiteUrl": "https://leclou.bz",
    "logoUrl": "https://grizzlies.lisorect.it/api/public/files/sponsors/69ca7ddf49ad406c944a794d9f421dfb.png",
    "id": 4,
    "description": null
