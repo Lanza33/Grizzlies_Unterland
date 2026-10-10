@@ -1,6 +1,6 @@
 {
- "version": "bcd454a441b44988",
- "generatedAt": "2026-10-07T07:54:00.6381816Z",
+ "version": "241b8febaba8d22b",
+ "generatedAt": "2026-10-10T07:54:17.8783673Z",
  "teamName": "Grizzlies Unterland",
  "season": "2026/2027",
  "seasonStartYear": 2026,
@@ -102,8 +102,8 @@
    "position": "F",
    "jerseyNumber": 7,
    "isNew": false,
-   "photoUrl": null,
-   "cutoutUrl": null
+   "photoUrl": "https://grizzlies.lisorect.it/api/public/files/players/0a14db7db17c4f85a9eccfbe293605ed.jpg",
+   "cutoutUrl": "https://grizzlies.lisorect.it/api/public/files/players/f7026df1d6694153ae0138fa5d087e4e.jpg"
   },
   {
    "firstName": "Matthias",
