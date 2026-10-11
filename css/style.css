@@ -555,20 +555,17 @@ body>.rinkbg{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5}
 body>.rinkbg{top:230px}
 body:has(.rinkview)>.rinkbg{opacity:1}
 body:has(.rinkview)>.rinkbg svg *{opacity:.9}
-.rinkview{height:calc(100vh - 230px);min-height:700px}
+.rinkview{height:calc(100vh - 230px);min-height:650px}
 
 /* Spielfeld scrollt mit */
-body>.rinkbg{position:absolute;inset:auto;top:230px;left:-16%;width:132%;height:calc(100vh - 230px);min-height:700px}
+body>.rinkbg{position:absolute;inset:auto;top:230px;left:-16%;width:132%;height:calc(100vh - 230px);min-height:650px}
 
 /* Game Day mitten im Spielfeld */
 .gamecenter.rinkview{display:flex;align-items:center;justify-content:center;padding:1.5rem 0;margin-top:36px;height:auto;min-height:calc(100vh - 230px)}
-.gamecenter.rinkview{min-height:max(calc(100vh - 230px),700px)}
+.gamecenter.rinkview{min-height:max(calc(100vh - 230px),650px)}
 .gamecenter.rinkview>.wrap{width:100%;max-width:min(1040px,86vw)}
 .gamecenter.rinkview .sec-head{margin-bottom:1rem}
 .game-cta{text-align:center;margin-top:1.6rem}
-.game-sponsor{display:flex;flex-direction:column;align-items:center;gap:.4rem;margin-top:1.2rem}
-.game-sponsor__label{font-family:var(--hud);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--wheat);opacity:.65}
-.game-sponsor__logo{height:26px;width:auto;object-fit:contain}
 
 /* Spielfeld auf mobiler Ansicht senkrecht statt waagerecht, breiter und auf den Bereich begrenzt (bleedet nicht mehr in den nächsten Abschnitt) */
 @media(max-width:900px){
