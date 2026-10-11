@@ -128,6 +128,11 @@ const seasonStarted = (s) => s.games.some((g) => g.result);
 export const playerPhotoPath = (p) => `${CONFIG.playerPhotoDir}/${slug(fullName(p))}${extOf(p.cutoutUrl, '.png')}`;
 export const sponsorLogoPath = (sp) => `${CONFIG.sponsorLogoDir}/${slug(sp.name)}${extOf(sp.logoUrl, '.png')}`;
 export const boardPhotoPath = (b) => `assets/people/${slug(b.firstName + ' ' + b.lastName)}${extOf(b.photoUrl, '.jpg')}`;
+// Hat PlayerVW (noch) kein Foto hinterlegt, zeigen wir – falls vorhanden – ein von Hand abgelegtes Foto unter
+// diesem festen Namen (Freisteller, .png). Sobald PlayerVW ein echtes Foto liefert, hat das automatisch Vorrang
+// (siehe team()/board() unten); ein fehlendes manuelles Foto blendet sich über onerror einfach wieder aus.
+export const playerPhotoFallback = (p) => `${CONFIG.playerPhotoDir}/${slug(fullName(p))}.png`;
+export const boardPhotoFallback = (b) => `assets/people/${slug(b.firstName + ' ' + b.lastName)}.png`;
 
 // ── Bereiche ────────────────────────────────────────────────────────────────
 // ctx: { lang, prefix ('' oder '../'), now (Date), current (bisheriger Inhalt als HTML), image(url, suggestedLocalPath, kind) → src }
@@ -170,7 +175,7 @@ const renderers = {
         const src = p.cutoutUrl ? ctx.image(p.cutoutUrl, playerPhotoPath(p), 'player') : null;
         const ph = src
           ? `<div class="pcard__ph"><img src="${src}" alt="${esc(fullName(p))}"></div>`
-          : `<div class="pcard__ph pcard__ph--empty"><!-- Foto: <img src="${ctx.prefix}${CONFIG.playerPhotoDir}/name.png" alt="Name"> --></div>`;
+          : `<div class="pcard__ph"><img src="${ctx.prefix}${playerPhotoFallback(p)}" alt="${esc(fullName(p))}" onerror="this.closest('.pcard__ph').classList.add('pcard__ph--empty');this.remove()"></div>`;
         out += `\n      <article class="pcard" data-pos="${pos}"><div class="pcard__num" aria-hidden="true">${p.jerseyNumber ?? '&nbsp;'}</div>${ph}`
           + `<div class="pcard__meta"><span class="pcard__pos">${L.positions[pos]}</span><h3>${esc(p.firstName)}<br>${esc(p.lastName)}</h3></div></article>`;
       }
@@ -208,7 +213,9 @@ const renderers = {
     return s.board.map((b) => {
       const name = `${b.firstName} ${b.lastName}`;
       const src = b.photoUrl ? ctx.image(b.photoUrl, boardPhotoPath(b), 'board') : null;
-      const ph = src ? `<div class="pcard__ph"><img src="${src}" alt="${esc(name)}"></div>` : '<div class="pcard__ph pcard__ph--empty"></div>';
+      const ph = src
+        ? `<div class="pcard__ph"><img src="${src}" alt="${esc(name)}"></div>`
+        : `<div class="pcard__ph"><img src="${ctx.prefix}${boardPhotoFallback(b)}" alt="${esc(name)}" onerror="this.closest('.pcard__ph').classList.add('pcard__ph--empty');this.remove()"></div>`;
       const role = (ctx.lang === 'it' ? b.roleIt : ctx.lang === 'en' ? b.roleEn : null) ?? b.role;
       return `      <article class="pcard"><div class="pcard__num" aria-hidden="true">&nbsp;</div>${ph}<div class="pcard__meta"><span class="pcard__pos">${esc(role)}</span><h3>${esc(b.firstName)}<br>${esc(b.lastName)}</h3></div></article>`;
     }).join('\n');
