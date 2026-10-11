@@ -107,8 +107,7 @@ p{margin:0 0 1rem}
 .section--light{background:var(--light);color:var(--ink)}
 .section--light h1,.section--light h2,.section--light h3{color:var(--forest-deep)}
 .section--light p{color:var(--ink-soft)}
-.section--dark{background:var(--forest-deep) url('../assets/bg-smoke.jpg') center/cover;position:relative;isolation:isolate}
-.section--dark::before{content:"";position:absolute;inset:0;z-index:-1;background:rgba(7,22,15,.78)}
+.section--dark{background:#000;position:relative;isolation:isolate}
 .h2{font-size:clamp(1.7rem,3.4vw,2.7rem);margin:0 0 1rem}
 .lede{font-size:1.2rem;max-width:34em;color:var(--wheat)}
 .section--light .lede{color:var(--ink-soft)}
