@@ -44,6 +44,17 @@ function regions() {
   return found;
 }
 
+/** Namen mit <!--pvw-freeze:name--> irgendwo auf der Seite: werden live nicht angefasst (siehe build.mjs). */
+function frozenNames() {
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_COMMENT);
+  const names = new Set();
+  for (let n = walker.nextNode(); n; n = walker.nextNode()) {
+    const m = n.data.match(/^pvw-freeze:([\w-]+)$/);
+    if (m) names.add(m[1]);
+  }
+  return names;
+}
+
 function innerHtml(start, end) {
   const box = document.createElement('div');
   for (let n = start.nextSibling; n && n !== end; n = n.nextSibling) box.appendChild(n.cloneNode(true));
@@ -93,7 +104,9 @@ function apply(s) {
   const L = CONFIG.languages[lang];
   const now = new Date();
   const image = (url, suggested) => (manifest.get(url) ? prefix + manifest.get(url) : url);
+  const frozen = frozenNames();
   for (const r of regions()) {
+    if (frozen.has(r.name)) continue;
     const html = renderRegion(r.name, s, { lang, prefix, now, current: innerHtml(r.start, r.end), image });
     if (html !== null && replace(r.start, r.end, html) && r.name === 'team') reapplyTeamFilter();
   }
@@ -112,7 +125,8 @@ async function refresh() {
     // Gleicher Stand → nur zeitabhängige Bereiche ("Nächstes Spiel") prüfen
     await loadManifest();
     if (s.version === lastVersion) {
-      for (const r of regions().filter((x) => x.name === 'next' || x.name === 'home-game')) {
+      const frozen = frozenNames();
+      for (const r of regions().filter((x) => (x.name === 'next' || x.name === 'home-game') && !frozen.has(x.name))) {
         const html = renderRegion(r.name, s, { lang, prefix, now: new Date(), current: '', image: (u) => u });
         if (html !== null) replace(r.start, r.end, html);
       }

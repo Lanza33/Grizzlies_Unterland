@@ -107,10 +107,16 @@ async function syncImages(s) {
 // ── Seiten schreiben ────────────────────────────────────────────────────────
 
 const MARK = /(<!--pvw:([\w-]+)-->|\/\*pvw:([\w-]+)\*\/)([\s\S]*?)(<!--\/pvw:\2-->|\/\*\/pvw:\3\*\/)/g;
+// Ein Bereich mit <!--pvw-freeze:name--> irgendwo auf der Seite wird weder vom Build noch live überschrieben
+// (siehe js/playervw.js) – so kann er von Hand gepflegt werden, bis die Markierung wieder entfernt wird.
+const FREEZE = /<!--pvw-freeze:([\w-]+)-->/g;
+const frozenNames = (html) => new Set([...html.matchAll(FREEZE)].map((m) => m[1]));
 
 function fill(html, s, lang, prefix, now) {
+  const frozen = frozenNames(html);
   return html.replace(MARK, (all, open, n1, n2, current, close) => {
     const name = n1 ?? n2;
+    if (frozen.has(name)) return all;
     const ctx = {
       lang, prefix, now, current, sponsorPath,
       // Bild immer aus dem Repo (wurde vorher synchronisiert)

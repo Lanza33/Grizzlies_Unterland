@@ -39,6 +39,24 @@ Build und Browser nutzen dieselbe Darstellung. Dort stehen:
 
 Bilder (Spielerfotos, Sponsorlogos) werden beim Aktualisieren in `assets/` gespeichert; `assets.json` merkt sich die Herkunft.
 
+## Einen Bereich von Hand pflegen (Ausnahme)
+
+Normalerweise gilt: alles zwischen `<!--pvw:name-->` … `<!--/pvw:name-->` kommt aus PlayerVW und wird überschrieben.
+Soll ein einzelner Bereich ausnahmsweise von Hand gepflegt werden (z.B. weil PlayerVW für diese Liga/Saison noch keine
+Tabelle liefert), reicht irgendwo auf derselben Seite ein zusätzlicher Kommentar:
+
+```html
+<!--pvw-freeze:standings-->
+```
+
+Solange dieser Kommentar auf der Seite steht, fasst weder der Build (`build.mjs`) noch die Live-Aktualisierung im
+Browser (`js/playervw.js`) den Bereich `standings` an – er bleibt genau so stehen, wie er zuletzt von Hand eingetragen
+wurde, egal was in PlayerVW passiert. Den Inhalt zwischen den `pvw:standings`-Markierungen kann man dann normal im
+HTML bearbeiten.
+
+Um wieder auf automatische Daten aus PlayerVW umzustellen, einfach die `pvw-freeze`-Zeile wieder entfernen – beim
+nächsten Build bzw. der nächsten Live-Aktualisierung übernimmt PlayerVW den Bereich wieder.
+
 ## Lokal ausprobieren
 
 ```bash
