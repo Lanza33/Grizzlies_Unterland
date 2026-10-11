@@ -94,6 +94,13 @@ p{margin:0 0 1rem}
 .timeline-section{padding-top:clamp(1.8rem,3.5vw,2.5rem);padding-bottom:clamp(2.6rem,4.5vw,3.6rem)}
 .intro-section{padding-bottom:clamp(2.6rem,4.5vw,3.6rem)}
 .intro-section p:last-child{margin-bottom:0}
+.club-history{max-width:760px;margin-top:1.6rem}
+.club-history h3{font-size:1.05rem;margin:1.8rem 0 .5rem;color:var(--neon);font-family:var(--hud);letter-spacing:.04em}
+.club-history h3:first-child{margin-top:0}
+.club-history p{margin:0 0 .8rem;line-height:1.7;color:var(--wheat)}
+.club-history ul{margin:0 0 1.2rem;padding-left:1.2rem;line-height:1.7;color:var(--wheat)}
+.club-history ul li{margin-bottom:.3rem}
+.section--light .club-history p,.section--light .club-history ul{color:var(--ink-soft)}
 .timeline-section~.section{padding-top:clamp(1.8rem,3.5vw,2.5rem);padding-bottom:clamp(2.6rem,4.5vw,3.6rem)}
 .section--light{background:var(--light);color:var(--ink)}
 .section--light h1,.section--light h2,.section--light h3{color:var(--forest-deep)}
