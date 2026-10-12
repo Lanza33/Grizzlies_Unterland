@@ -1,6 +1,6 @@
 {
- "version": "241b8febaba8d22b",
- "generatedAt": "2026-10-10T07:54:17.8783673Z",
+ "version": "e139da55a5efc897",
+ "generatedAt": "2026-10-12T08:16:24.4007166Z",
  "teamName": "Grizzlies Unterland",
  "season": "2026/2027",
  "seasonStartYear": 2026,
@@ -66,8 +66,8 @@
    "position": "D",
    "jerseyNumber": 20,
    "isNew": false,
-   "photoUrl": null,
-   "cutoutUrl": null
+   "photoUrl": "https://grizzlies.lisorect.it/api/public/files/players/b3d957cfc8f342c3b497d3b2e5ec269c.jpg",
+   "cutoutUrl": "https://grizzlies.lisorect.it/api/public/files/players/98b79ea0462e4b8ca1b017e7429b05d4.jpg"
   },
   {
    "firstName": "Lukas",
@@ -185,15 +185,6 @@
    "isNew": false,
    "photoUrl": null,
    "cutoutUrl": null
-  },
-  {
-   "firstName": "Max",
-   "lastName": "Depaoli",
-   "position": "F",
-   "jerseyNumber": 97,
-   "isNew": false,
-   "photoUrl": null,
-   "cutoutUrl": null
   }
  ],
  "games": [
@@ -214,7 +205,7 @@
    "id": 1
   },
   {
-   "startsAt": "2026-10-25T16:30:00",
+   "startsAt": "2026-10-24T21:00:00",
    "venue": "Ritten",
    "isHome": false,
    "home": {
