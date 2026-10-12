@@ -134,6 +134,15 @@ export const boardPhotoPath = (b) => `assets/people/${slug(b.firstName + ' ' + b
 export const playerPhotoFallback = (p) => `${CONFIG.playerPhotoDir}/${slug(fullName(p))}.png`;
 export const boardPhotoFallback = (b) => `assets/people/${slug(b.firstName + ' ' + b.lastName)}.png`;
 
+// Diese Spieler haben ein von Hand zugeschnittenes Foto (enger Ausschnitt, wie Marcel Rizzi). Für sie wird das
+// PlayerVW-Foto ignoriert und immer das lokale Foto gezeigt — Anlass: PlayerVW hatte für Matteo Chiste und Simon
+// Stuppner versehentlich falsche Bilder hinterlegt (Arztzertifikat bzw. Spaß-Polaroid), die sonst automatisch das
+// kuratierte Foto verdrängt hätten. Wird ein Name hier entfernt, greift beim nächsten Sync wieder das PlayerVW-Foto.
+export const photoOverrides = new Set([
+  'alex-tiziani', 'bastian-lechner', 'felix-puff', 'gregor-lanziner', 'lorenz-fackl', 'marcel-rizzi',
+  'matteo-chiste', 'matthias-fill', 'matthias-locher', 'patrick-ceolan', 'patrick-sanin', 'simon-stuppner'
+]);
+
 // ── Bereiche ────────────────────────────────────────────────────────────────
 // ctx: { lang, prefix ('' oder '../'), now (Date), current (bisheriger Inhalt als HTML), image(url, suggestedLocalPath, kind) → src }
 
@@ -172,7 +181,7 @@ const renderers = {
       if (players.length === 0) continue;
       out += `${out ? '\n' : ''}<h3 class="pgrid__group" data-group="${pos}">${L.positions[pos]}</h3>`;
       for (const p of players) {
-        const src = p.cutoutUrl ? ctx.image(p.cutoutUrl, playerPhotoPath(p), 'player') : null;
+        const src = (p.cutoutUrl && !photoOverrides.has(slug(fullName(p)))) ? ctx.image(p.cutoutUrl, playerPhotoPath(p), 'player') : null;
         const ph = src
           ? `<div class="pcard__ph"><img src="${src}" alt="${esc(fullName(p))}"></div>`
           : `<div class="pcard__ph"><img src="${ctx.prefix}${playerPhotoFallback(p)}" alt="${esc(fullName(p))}" onerror="this.closest('.pcard__ph').classList.add('pcard__ph--empty');this.remove()"></div>`;

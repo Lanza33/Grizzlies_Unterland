@@ -11,7 +11,7 @@
 import { readFile, writeFile, mkdir, access } from 'node:fs/promises';
 import { dirname, extname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { CONFIG, renderRegion, playerPhotoPath, sponsorLogoPath, boardPhotoPath, slug, extOf } from '../../js/playervw-render.js';
+import { CONFIG, renderRegion, playerPhotoPath, sponsorLogoPath, boardPhotoPath, photoOverrides, fullName, slug, extOf } from '../../js/playervw-render.js';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(HERE, '..', '..');
@@ -99,7 +99,7 @@ const sponsorPath = (sp) => fitExt(localFor(sp.logoUrl) ?? sponsorLogosDe.get(sp
 
 async function syncImages(s) {
   for (const sp of s.sponsors) await syncAsset(sponsorPath(sp), sp.logoUrl);
-  for (const p of s.players) if (p.cutoutUrl) await syncAsset(fitExt(localFor(p.cutoutUrl), p.cutoutUrl) ?? playerPhotoPath(p), p.cutoutUrl);
+  for (const p of s.players) if (p.cutoutUrl && !photoOverrides.has(slug(fullName(p)))) await syncAsset(fitExt(localFor(p.cutoutUrl), p.cutoutUrl) ?? playerPhotoPath(p), p.cutoutUrl);
   for (const b of s.board) if (b.photoUrl) await syncAsset(fitExt(localFor(b.photoUrl), b.photoUrl) ?? boardPhotoPath(b), b.photoUrl);
   for (const d of s.documents ?? []) await syncAsset(fitExt(localFor(d.url), d.url) ?? `assets/dokumente/${slug(d.title)}.pdf`, d.url);
 }
