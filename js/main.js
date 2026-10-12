@@ -73,7 +73,7 @@
     chip.addEventListener('click', function(){
       chips.forEach(function(c){ c.setAttribute('aria-pressed', c === chip ? 'true' : 'false'); });
       var f = chip.getAttribute('data-filter');
-      // Karten erst beim Klick suchen: js/playervw.js kann sie nach dem Laden durch aktuelle Daten ersetzen
+      // Karten erst beim Klick suchen (nicht beim Laden merken)
       var cards = document.querySelectorAll('.pcard[data-pos]');
       var groups = document.querySelectorAll('.pgrid__group[data-group]');
       cards.forEach(function(card){ card.hidden = !(f === 'all' || card.getAttribute('data-pos') === f); });
