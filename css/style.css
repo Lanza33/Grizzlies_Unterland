@@ -307,6 +307,7 @@ p{margin:0 0 1rem}
 .fblock__row{overflow-wrap:anywhere}
 .fweeeb{display:inline-flex;vertical-align:middle;opacity:.85}
 .fweeeb img{height:27px;width:auto;display:block}
+.ffooter-made{display:inline-flex;align-items:center;gap:.4rem}
 @media(max-width:760px){.fweeeb img{height:22px}}
 .rhl{display:flex;align-items:center;gap:.8rem;margin-top:1rem;font-size:.85rem}
 .rhl img{height:44px;width:auto}
