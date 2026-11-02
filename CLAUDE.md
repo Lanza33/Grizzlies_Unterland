@@ -18,8 +18,7 @@ Satzung (`assets/dokumente/`).
 
 | Inhalt | Datei(en) |
 |---|---|
-| Leiste „Nächstes Spiel“ ganz oben | **jede** Seite (alle 27 HTML-Dateien) – nach jedem Spiel überall anpassen |
-| „Game Day“-Karte der Startseite | `index.html` (+ `it/`, `en/`) |
+| Leiste „Nächstes Spiel“ ganz oben + „Game Day“-Karte der Startseite | **automatisch** per `assets/js/nextgame.js` aus `assets/js/schedule.js` – kein manuelles Anpassen mehr nötig (siehe unten) |
 | Spielplan mit Monatsumschalter | `spielplan.html`: Variable `CAL_MONTHS` im Skript am Seitenende |
 | Tabelle und Statistiken | `spielplan.html`: HTML-Tabelle bzw. Variable `STATS` im Skript |
 | Mannschaft (Karten, Nummern, Fotos) | `mannschaft.html`, Fotos in `assets/spieler/<vorname-nachname>.png` |
