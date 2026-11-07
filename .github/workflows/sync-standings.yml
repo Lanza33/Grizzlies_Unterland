@@ -1,0 +1,34 @@
+name: Sync standings & scorer stats
+
+on:
+  schedule:
+    - cron: "0 5,17 * * *"  # 05:00 and 17:00 UTC daily
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Sync standings from grizzlies.lisorect.it
+        run: python3 .github/scripts/sync_standings.py
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet; then
+            echo "No changes."
+            exit 0
+          fi
+          git add spielplan.html it/spielplan.html en/spielplan.html
+          git commit -m "Auto-sync: Tabelle & Scorer-Statistiken von grizzlies.lisorect.it"
+          git push
