@@ -668,6 +668,24 @@ body:has(.rinkview)>.rinkbg{display:block}
 .standings-scroll--top{margin-top:4.2rem}
 .stats-switch{margin-top:4.2rem}
 .stats-switch .cal__head{min-width:18ch}
+.stats-tabs{display:flex;justify-content:center;gap:.5rem;margin-bottom:1.2rem;flex-wrap:wrap}
+.stats-tabs button{font-family:var(--hud);font-weight:600;font-size:.78rem;letter-spacing:.07em;text-transform:uppercase;color:var(--wheat-soft);background:rgba(0,0,0,.35);border:1px solid var(--line);border-radius:999px;padding:.5rem 1.3rem;cursor:pointer;transition:background .2s,border-color .2s,color .2s}
+.stats-tabs button:hover{border-color:var(--iron)}
+.stats-tabs button[aria-current="true"]{background:var(--iron);border-color:var(--iron);color:#fff}
+.podium{display:flex;align-items:flex-end;justify-content:center;gap:1rem;margin-bottom:1.6rem;flex-wrap:wrap}
+.podium__card{flex:1 1 150px;max-width:220px;background:rgba(0,0,0,.35);border:1px solid var(--line);border-radius:10px;padding:1.1rem .9rem;text-align:center}
+.podium__card--1{order:2;border-color:#e8c766;background:rgba(232,199,102,.1)}
+.podium__card--2{order:1;border-color:#c9c9c9;background:rgba(201,201,201,.08)}
+.podium__card--3{order:3;border-color:#c98a4b;background:rgba(201,138,75,.08)}
+.podium__rank{font-family:var(--hud);font-weight:700;font-size:1.7rem;color:var(--wheat)}
+.podium__card--1 .podium__rank{color:#e8c766}
+.podium__card--2 .podium__rank{color:#c9c9c9}
+.podium__card--3 .podium__rank{color:#c98a4b}
+.podium__name{font-weight:600;color:#fff;margin:.35rem 0 .15rem;font-size:.92rem}
+.podium__team{font-size:.72rem;opacity:.65;margin-bottom:.3rem}
+.podium__pts{font-family:'JetBrains Mono',monospace;font-size:1.4rem;font-weight:700;color:var(--wheat-soft)}
+.podium__sub{font-size:.74rem;opacity:.7;margin-top:.25rem}
+@media(max-width:640px){.podium__card{padding:.8rem .6rem}.podium__rank{font-size:1.4rem}.podium__pts{font-size:1.2rem}}
 .pagehead__sub{font-size:.42em;font-weight:400;color:var(--wheat);opacity:.75;margin-left:.25em;vertical-align:middle}
 .standings{width:100%;border-collapse:collapse;min-width:520px;font-family:var(--hud);font-size:.86rem}
 .standings thead th{background:rgba(0,0,0,.4);color:var(--wheat);font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:.72rem;text-align:center;padding:.7rem .5rem;border-bottom:1px solid var(--line)}

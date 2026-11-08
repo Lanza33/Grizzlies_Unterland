@@ -10,11 +10,16 @@ Seit 12.10.2026 ist die Webseite **vollständig eigenständig**. Es gibt keine A
 stehen fest im HTML und werden **direkt in diesem Repo von Hand gepflegt** – in allen drei Sprachen
 (`*.html`, `it/*.html`, `en/*.html`).
 
-**Ausnahme seit 08.11.2026:** Liga-Tabelle und Topscorer-Liste in `spielplan.html` (DE/IT/EN) werden täglich
-automatisch per GitHub Actions (`.github/workflows/update-stats.yml`, `scripts/update_stats.py`) aus dem
-öffentlichen Snapshot von `grizzlies.lisorect.it` aktualisiert (der seinerseits automatisch mit Clava synchronisiert
-wird). `mannschaft.html` bleibt bewusst manuell gepflegt. Nicht direkt per API/Token mit Clava verbunden – nur
-legitim über die öffentliche Lisorect-Schnittstelle.
+**Ausnahme seit 08.11.2026:** Liga-Tabelle und Topscorer-Liste (Tabs „Unterland" und „Gesamt") in `spielplan.html`
+(DE/IT/EN) werden täglich automatisch per GitHub Actions (`.github/workflows/update-stats.yml`,
+`scripts/update_stats.py`) aktualisiert. Liga-Tabelle und „Unterland"-Scorer kommen aus dem öffentlichen Snapshot
+von `grizzlies.lisorect.it` (der seinerseits automatisch mit Clava synchronisiert wird). Der „Gesamt"-Tab
+(ligaweite Scorerliste aller Mannschaften) kommt von der authentifizierten Scorer-Seite desselben Portals – Login
+mit einem echten Mitgliederzugang (Secrets `LISORECT_USERNAME`/`LISORECT_PASSWORD`, nur verschlüsselt in GitHub
+Actions hinterlegt, nie im Repo), per Playwright (`scripts/scrape_gesamt.py`) aus dem bereits gerenderten DOM
+ausgelesen – es werden keine Tokens/Cookies/Storage-Daten gelesen oder gespeichert. `mannschaft.html` bleibt
+bewusst manuell gepflegt. Nicht direkt per API/Token mit Clava verbunden – nur legitim über die
+Lisorect-Schnittstelle (öffentlich für die Tabelle, mit legitimem Mitglieder-Login für den Gesamt-Tab).
 
 Was beim Entkoppeln übernommen wurde (Stand 12.10.2026): Mannschaft, Spielplan, Ergebnisse, Tabelle, Statistiken,
 Vorstand, Sponsoren samt Logos (`assets/`), Spielerfotos (`assets/spieler/`), Gegner-Logos (`assets/gegner/`) und die

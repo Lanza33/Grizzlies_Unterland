@@ -19,7 +19,15 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Playwright installieren
+        run: |
+          pip install playwright
+          playwright install --with-deps chromium
+
       - name: Tabelle & Topscorer von Lisorect/Clava holen
+        env:
+          LISORECT_USERNAME: ${{ secrets.LISORECT_USERNAME }}
+          LISORECT_PASSWORD: ${{ secrets.LISORECT_PASSWORD }}
         run: python3 scripts/update_stats.py
 
       - name: Änderungen committen & pushen
