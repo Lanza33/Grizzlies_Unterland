@@ -1,0 +1,35 @@
+name: Tabelle & Topscorer aktualisieren
+
+on:
+  schedule:
+    # 23:00 UTC = 00:00 Uhr MEZ (während der Saison meist Winterzeit/UTC+1).
+    - cron: "0 23 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  update-stats:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Tabelle & Topscorer von Lisorect/Clava holen
+        run: python3 scripts/update_stats.py
+
+      - name: Änderungen committen & pushen
+        run: |
+          git config user.name "grizzlies-stats-bot"
+          git config user.email "actions@users.noreply.github.com"
+          if git diff --quiet; then
+            echo "Keine Änderungen."
+            exit 0
+          fi
+          git add spielplan.html it/spielplan.html en/spielplan.html
+          git commit -m "Tabelle & Topscorer automatisch aktualisiert"
+          git push

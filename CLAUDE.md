@@ -10,6 +10,12 @@ Seit 12.10.2026 ist die Webseite **vollständig eigenständig**. Es gibt keine A
 stehen fest im HTML und werden **direkt in diesem Repo von Hand gepflegt** – in allen drei Sprachen
 (`*.html`, `it/*.html`, `en/*.html`).
 
+**Ausnahme seit 08.11.2026:** Liga-Tabelle und Topscorer-Liste in `spielplan.html` (DE/IT/EN) werden täglich
+automatisch per GitHub Actions (`.github/workflows/update-stats.yml`, `scripts/update_stats.py`) aus dem
+öffentlichen Snapshot von `grizzlies.lisorect.it` aktualisiert (der seinerseits automatisch mit Clava synchronisiert
+wird). `mannschaft.html` bleibt bewusst manuell gepflegt. Nicht direkt per API/Token mit Clava verbunden – nur
+legitim über die öffentliche Lisorect-Schnittstelle.
+
 Was beim Entkoppeln übernommen wurde (Stand 12.10.2026): Mannschaft, Spielplan, Ergebnisse, Tabelle, Statistiken,
 Vorstand, Sponsoren samt Logos (`assets/`), Spielerfotos (`assets/spieler/`), Gegner-Logos (`assets/gegner/`) und die
 Satzung (`assets/dokumente/`).
@@ -20,7 +26,7 @@ Satzung (`assets/dokumente/`).
 |---|---|
 | Leiste „Nächstes Spiel“ ganz oben + „Game Day“-Karte der Startseite | **automatisch** per `assets/js/nextgame.js` aus `assets/js/schedule.js` – kein manuelles Anpassen mehr nötig (siehe unten) |
 | Spielplan mit Monatsumschalter | `spielplan.html`: Variable `CAL_MONTHS` im Skript am Seitenende |
-| Tabelle und Statistiken | `spielplan.html`: HTML-Tabelle bzw. Variable `STATS` im Skript |
+| Tabelle und Statistiken | `spielplan.html`: HTML-Tabelle bzw. Variable `STATS` im Skript – **automatisch** täglich per `scripts/update_stats.py` (siehe oben), kein manuelles Anpassen mehr nötig |
 | Mannschaft (Karten, Nummern, Fotos) | `mannschaft.html`, Fotos in `assets/spieler/<vorname-nachname>.png` |
 | Vorstand | `vorstand.html`, Fotos in `assets/people/` |
 | Sponsoren (Laufband + Seite) | `index.html` (Laufband) und `sponsoren.html`, Logos in `assets/` |
