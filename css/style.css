@@ -668,7 +668,7 @@ body:has(.rinkview)>.rinkbg{display:block}
 .standings-scroll--top{margin-top:4.2rem}
 .stats-switch{margin-top:4.2rem}
 .stats-switch .cal__head{min-width:18ch}
-.stats-pages{margin-top:1rem;margin-bottom:0}
+.stats-pages{margin-top:2rem;margin-bottom:0}
 .stats-pages .cal__head{min-width:10ch;font-size:.85rem}
 .stats-tabs{display:flex;justify-content:center;gap:.5rem;margin-bottom:1.2rem;flex-wrap:wrap}
 .stats-tabs button{font-family:var(--hud);font-weight:600;font-size:.78rem;letter-spacing:.07em;text-transform:uppercase;color:var(--wheat-soft);background:rgba(0,0,0,.35);border:1px solid var(--line);border-radius:999px;padding:.5rem 1.3rem;cursor:pointer;transition:background .2s,border-color .2s,color .2s}
