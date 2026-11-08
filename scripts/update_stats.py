@@ -95,23 +95,16 @@ def build_standings_tbody(standings, prefix):
     return "".join(rows)
 
 
-def header_row(headers):
-    ths = "".join(f"<th>{h}</th>" for h in headers)
-    return f"<table class=\"standings\"><thead><tr>{ths}</tr></thead><tbody>"
-
-
-def build_unterland_body(scorers, headers):
+def build_unterland_rows(scorers):
     rows = []
     for s in scorers:
         position = s.get("position") or ""
         name = f"{s['firstName']} {s['lastName']}"
-        rows.append(
-            f"<tr><td>{s['jerseyNumber']}</td>"
-            f'<td class="standings__team">{name}</td>'
-            f"<td>{position}</td><td>{s['gamesPlayed']}</td><td>{s['goals']}</td>"
-            f"<td>{s['assists']}</td><td>{s['points']}</td></tr>"
-        )
-    return header_row(headers) + "".join(rows) + "</tbody></table>"
+        rows.append([
+            str(s["jerseyNumber"]), name, position, str(s["gamesPlayed"]),
+            str(s["goals"]), str(s["assists"]), str(s["points"]),
+        ])
+    return rows
 
 
 def build_unterland_podium(scorers, goals_abbr):
@@ -127,18 +120,15 @@ def build_unterland_podium(scorers, goals_abbr):
     return podium
 
 
-def build_gesamt_body(gesamt_rows, headers):
+def build_gesamt_rows(gesamt_rows):
     rows = []
     for s in gesamt_rows:
         name = f"{s['firstName']} {s['lastName']}"
         team = TEAM_NAME_OVERRIDES.get(s["team"], s["team"])
-        rows.append(
-            f"<tr><td>{s['rank']}</td>"
-            f'<td class="standings__team">{name}</td>'
-            f"<td>{team}</td><td>{s['goals']}</td>"
-            f"<td>{s['assists']}</td><td>{s['points']}</td></tr>"
-        )
-    return header_row(headers) + "".join(rows) + "</tbody></table>"
+        rows.append([
+            str(s["rank"]), name, team, str(s["goals"]), str(s["assists"]), str(s["points"]),
+        ])
+    return rows
 
 
 def build_gesamt_podium(gesamt_rows, goals_abbr):
@@ -178,15 +168,17 @@ def update_file(cfg, standings, scorers, gesamt_rows):
 
     new_stats = [{
         "label": cfg["unterland_label"],
+        "headers": cfg["headers_unterland"],
         "podium": build_unterland_podium(scorers, cfg["goals_abbr"]),
-        "body": build_unterland_body(scorers, cfg["headers_unterland"]),
+        "rows": build_unterland_rows(scorers),
     }]
 
     if gesamt_rows is not None:
         new_stats.append({
             "label": cfg["gesamt_label"],
+            "headers": cfg["headers_gesamt"],
             "podium": build_gesamt_podium(gesamt_rows, cfg["goals_abbr"]),
-            "body": build_gesamt_body(gesamt_rows, cfg["headers_gesamt"]),
+            "rows": build_gesamt_rows(gesamt_rows),
         })
     elif len(old_stats) > 1:
         new_stats.append(old_stats[1])
