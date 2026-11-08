@@ -700,4 +700,7 @@ body:has(.rinkview)>.rinkbg{display:block}
 .standings tbody tr.standings__own{background:rgba(200,32,58,.14)}
 .standings tbody tr.standings__own td{color:#fff}
 .standings tbody tr.standings__own .standings__team{color:var(--wheat-soft)}
+.standings tbody tr.scorers__own{background:rgba(34,160,107,.16)}
+.standings tbody tr.scorers__own td{color:#fff}
+.standings tbody tr.scorers__own .standings__team{color:#4fd38a;font-weight:600}
 @media(max-width:640px){.standings{font-size:.76rem}.standings thead th{padding:.55rem .35rem;font-size:.62rem}.standings tbody td{padding:.5rem .35rem}.standings__team img{height:26px;width:26px}}

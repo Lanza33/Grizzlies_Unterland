@@ -69,7 +69,8 @@
     var pageRows = rows.slice(page * PAGE_SIZE, page * PAGE_SIZE + PAGE_SIZE);
     var thead = '<thead><tr>' + entry.headers.map(function(h){ return '<th>' + h + '</th>'; }).join('') + '</tr></thead>';
     var tbody = '<tbody>' + pageRows.map(function(row){
-      return '<tr>' + row.map(function(cell, i){
+      var isOwn = row[2] === 'Grizzlies Unterland';
+      return '<tr' + (isOwn ? ' class="scorers__own"' : '') + '>' + row.map(function(cell, i){
         return '<td' + (i === 1 ? ' class="standings__team"' : '') + '>' + cell + '</td>';
       }).join('') + '</tr>';
     }).join('') + '</tbody>';
