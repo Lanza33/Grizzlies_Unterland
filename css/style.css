@@ -256,6 +256,7 @@ p{margin:0 0 1rem}
 .spon--logo-light img[src*="metallbau"]{height:90px}
 .spon--logo-light img[src*="barrel"]{height:80px}
 .spon--logo-light img[src*="sparkasse"]{height:72px}
+.spon--logo-light img[src*="zoeggeler"]{height:84px}
 @media(max-width:700px){
   .spon{padding:.7rem}
   .spon--logo-light{padding:.6rem}
@@ -268,6 +269,7 @@ p{margin:0 0 1rem}
   .spon--logo-light img[src*="metallbau"]{height:58px}
   .spon--logo-light img[src*="barrel"]{height:52px}
   .spon--logo-light img[src*="sparkasse"]{height:46px}
+  .spon--logo-light img[src*="zoeggeler"]{height:54px}
 }
 
 /* ---------- Kontakt ---------- */
