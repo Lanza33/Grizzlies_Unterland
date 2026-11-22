@@ -568,6 +568,9 @@ body>.rinkbg{position:absolute;inset:auto;top:230px;left:-16%;width:132%;height:
 .gamecenter.rinkview>.wrap{width:100%;max-width:min(1040px,86vw)}
 .gamecenter.rinkview .sec-head{margin-bottom:1rem}
 .game-cta{text-align:center;margin-top:1.6rem}
+.game-sponsor{display:flex;align-items:center;justify-content:center;gap:.7rem;margin-top:1.6rem;opacity:.85}
+.game-sponsor span{font-family:var(--hud);text-transform:uppercase;letter-spacing:.08em;font-size:.72rem;color:var(--wheat)}
+.game-sponsor img{height:34px;width:auto;object-fit:contain}
 
 /* Spielfeld auf mobiler Ansicht senkrecht statt waagerecht, breiter und auf den Bereich begrenzt (bleedet nicht mehr in den nächsten Abschnitt) */
 @media(max-width:900px){
